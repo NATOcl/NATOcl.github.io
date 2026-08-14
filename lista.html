@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de Tabla Completa en HTML Puro</title>
+</head>
+<body>
+
+    <!-- <table>: Contenedor principal de la tabla -->
+    <table border="1">
+
+        <!-- <caption>: Título o leyenda de la tabla -->
+        <caption>Reporte de Ventas Anual</caption>
+
+        <!-- <colgroup>: Define agrupaciones de columnas -->
+        <colgroup>
+            <col span="1">
+            <col span="2">
+        </colgroup>
+
+        <!-- <thead>: Encabezados de las columnas -->
+        <thead>
+            <!-- <tr>: Fila de la tabla -->
+            <tr>
+                <!-- <th>: Celda de encabezado -->
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Total</th>
+            </tr>
+        </thead>
+
+        <!-- <tbody>: Datos y contenido principal de la tabla -->
+        <tbody>
+            <tr>
+                <!-- <td>: Celda de datos -->
+                <td>Laptop Gaming</td>
+                <td>10</td>
+                <td>$12,000</td>
+            </tr>
+            <tr>
+                <td>Teclado Mecánico</td>
+                <td>25</td>
+                <td>$2,500</td>
+            </tr>
+            <tr>
+                <td>Monitor 144Hz</td>
+                <td>15</td>
+                <td>$4,500</td>
+            </tr>
+        </tbody>
+
+        <!-- <tfoot>: Resumen o totales al pie de la tabla -->
+        <tfoot>
+            <tr>
+                <th>Total</th>
+                <td>50</td>
+                <td>$19,000</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+</body>
+</html>
