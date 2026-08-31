@@ -14,6 +14,7 @@
     --color-teal-600: oklch(60% 0.118 184.704);
     --color-teal-700: oklch(51.1% 0.096 186.391);
     --color-teal-800: oklch(43.7% 0.078 188.216);
+    --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-300: oklch(87.2% 0.01 258.338);
@@ -279,6 +280,9 @@
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
   }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
+  }
   .mb-12 {
     margin-bottom: calc(var(--spacing) * 12);
   }
@@ -322,6 +326,9 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
   .h-12 {
     height: calc(var(--spacing) * 12);
   }
@@ -330,6 +337,9 @@
   }
   .w-6 {
     width: calc(var(--spacing) * 6);
+  }
+  .w-10 {
+    width: calc(var(--spacing) * 10);
   }
   .w-12 {
     width: calc(var(--spacing) * 12);
@@ -414,6 +424,9 @@
   .gap-1 {
     gap: var(--spacing);
   }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
   }
@@ -469,6 +482,9 @@
   }
   .bg-\[\#f4f6f4\] {
     background-color: #f4f6f4;
+  }
+  .bg-\[\#f8f9fa\] {
+    background-color: #f8f9fa;
   }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
@@ -538,6 +554,9 @@
   }
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
+  }
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
   }
   .py-24 {
     padding-block: calc(var(--spacing) * 24);
@@ -611,6 +630,9 @@
   .text-wrap {
     text-wrap: wrap;
   }
+  .text-blue-600 {
+    color: var(--color-blue-600);
+  }
   .text-emerald-100 {
     color: var(--color-emerald-100);
   }
@@ -643,6 +665,9 @@
   }
   .uppercase {
     text-transform: uppercase;
+  }
+  .italic {
+    font-style: italic;
   }
   .underline {
     text-decoration-line: underline;
