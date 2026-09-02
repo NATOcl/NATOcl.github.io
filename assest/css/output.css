@@ -619,9 +619,6 @@
   .object-right {
     object-position: right;
   }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
-  }
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
@@ -803,6 +800,12 @@
   }
   .underline {
     text-decoration-line: underline;
+  }
+  .decoration-gray-500 {
+    text-decoration-color: var(--color-gray-500);
+  }
+  .underline-offset-2 {
+    text-underline-offset: 2px;
   }
   .opacity-20 {
     opacity: 20%;
@@ -992,12 +995,6 @@
     }
   }
   @media (width >= 48rem) {
-    .md\:col-span-2 {
-      grid-column: span 2 / span 2;
-    }
-    .md\:col-span-5 {
-      grid-column: span 5 / span 5;
-    }
     .md\:flex {
       display: flex;
     }
@@ -1015,9 +1012,6 @@
     }
     .md\:grid-cols-4 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-    .md\:grid-cols-12 {
-      grid-template-columns: repeat(12, minmax(0, 1fr));
     }
     .md\:flex-row {
       flex-direction: row;
