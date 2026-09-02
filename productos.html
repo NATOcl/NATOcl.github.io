@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./assest/css/output.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/preline/dist/preline.js"></script>
+  <script src="./assest/js/filtros.js"></script>
+  <title>PetCare | Productos</title>
+<body>
+
+    <header class="flex flex-wrap lg:justify-start lg:flex-nowrap z-50 w-full py-4 bg-white border-b border-gray-200"> <!--comienzo barra de navegacion -->
+    <nav class="relative max-w-7xl w-full flex flex-wrap lg:grid lg:grid-cols-12 basis-full items-center px-4 md:px-6 lg:px-8 mx-auto">
+        <div class="lg:col-span-3 flex items-center">
+        <!-- Logo fixed -->
+        <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="index.html" aria-label="Preline">
+            <img class="h-14 w-auto object-contain" src="./assest/images/isotipo.png" alt="Logo Veterinaria">
+        </a>
+        <!-- End Logo fixed-->
+        </div>
+
+        <!-- Button Group -->
+        <!-- boton buscar -->
+        <div class="flex items-center gap-x-1 lg:gap-x-2 ms-auto py-1 lg:ps-6 lg:order-3 lg:col-span-3">
+        <button type="button" class="size-9.5 relative flex justify-center items-center rounded-xl bg-gray-100 border border-gray-200 text-gray-800 hover:bg-gray-200 focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
+            <span class="sr-only">Search</span>
+            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </button>
+        <!-- boton carrito -->
+        <button type="button" class="size-9.5 relative flex justify-center items-center rounded-xl bg-gray-100 border border-gray-200 text-gray-800 hover:bg-gray-200 focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
+            <span class="sr-only">Cart</span>
+            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+        </button>
+        <!-- boton inciar sesion -->
+        <button type="button" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl bg-teal-700 text-white hover:bg-teal-800 focus:outline-none transition disabled:opacity-50 disabled:pointer-events-none">
+            inciar sesion
+        </button>
+
+        <div class="lg:hidden">
+            <button type="button" class="hs-collapse-toggle size-9.5 flex justify-center items-center text-sm font-semibold rounded-xl bg-layer border border-layer-line text-layer-foreground hover:bg-layer-hover focus:outline-hidden focus:bg-layer-focus disabled:opacity-50 disabled:pointer-events-none" id="hs-pro-hcail-collapse" aria-expanded="false" aria-controls="hs-pro-hcail" aria-label="Toggle navigation" data-hs-collapse="#hs-pro-hcail">
+            <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+            <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+        </div>
+        </div>
+        <!-- End Button Group -->
+
+        <!-- Collapse -->
+        <div id="hs-pro-hcail" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow lg:block lg:w-auto lg:basis-auto lg:order-2 lg:col-span-6" aria-labelledby="hs-pro-hcail-collapse" role="region">
+        <div class="flex flex-col gap-y-4 gap-x-0 mt-5 lg:flex-row lg:justify-center lg:items-center lg:gap-y-0 lg:gap-x-7 lg:mt-0">
+            <div>
+            <a  class="relative inline-block text-foreground focus:outline-hidden "  href="index.html" aria-current="page">Inicio</a>
+            </div>
+            <div>
+            <a class="relative inline-block text-teal-700 font-semibold focus:outline-none before:absolute before:bottom-0.5 before:inset-x-0 before:w-full before:h-0.5 before:bg-teal-700"   href="productos.html" aria-current="page">Productos</a>
+            </div>
+            <div>
+            <a class="relative inline-block text-foreground focus:outline-hidden "  href="aboutus.html">Nosotros</a>
+            </div>
+            <div>
+            <a class="relative inline-block text-foreground focus:outline-hidden "  href="#">Blogs</a>
+            </div>
+            <div>
+            <a class="relative inline-block text-foreground focus:outline-hidden "  href="contacto.html">Contacto</a>
+            </div>
+        </div>
+        </div>
+        <!-- End Collapse -->
+    </nav>
+    </header> <!--fin barra de navegacion -->
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+      <!--encabezado-->
+      <div class="mb-8">
+        <span class="inline-block bg-teal-100 text-teal-800 text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full mb-3">
+          Catálogo - Veterinaria PetCare
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Productos y servicios</h1>
+        <p class="text-xs sm:text-sm text-gray-500 mt-1">
+          Todos los precios en pesos chilenos (CLP).
+        </p>
+      </div>
+
+      <!--controles-->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+        <!--Cambios entre servicios-->
+        <div class="inline-flex rounded-xl bg-gray-200/60 p-1 self-start">
+          <button class="py-2 px-4 text-xs font-semibold rounded-lg bg-teal-800 text-white shadow-sm flex items-center gap-2">
+            Servicios
+            <span class="bg-teal-900/50 text-white text-[10px] px-1.5 py-0.5 rounded-full" >31</span>
+          </button>
+          <button class="py-2 px-4 text-xs font-semibold rounded-lg text-gray-600 hover:text-gray-900 flex items-center gap-2">
+            Medicamentos y Vacunas
+            <span class="bg-gray-300 text-gray-700 text-[10px] px-1.5 py-0.5 rounded-full">22</span>
+          </button>
+        </div> <!--fin entre servicios-->
+
+        <!--caja busquieda-->
+
+        <div class="relative w-full md:w-72">
+          <input 
+          id="input-busqueda"
+          type="text"
+          placeholder="Buscar por nombre o código..."
+          class="w-full pl-3 pr-8 py-2 text-xs bg-white border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-700/20 focus:border-teal-700 transition"
+          />
+        </div>
+      </div>
+
+      <!--filtros-->
+
+      <div class="flex flex-wrap gap-2 mb-6">
+        <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-teal-800 text-white" data-categoria="Todos">Todos</button>
+        <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Consultas">Consultas</button>
+        <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Vacunación">Vacunación</button>
+        <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Cirugía">Cirugía</button>
+        <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Desparasitación">Desparasitación</button>
+        <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Exámenes">Exámenes</button>
+        <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Otros">Otros</button>
+      </div>
+
+      <!--tabla-->
+
+      <div class="bg-white rounded-2xl boarder border-gray-200 overflow-hidden shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-gray-600">
+            <thead class="bg-[#edf2ea] text-gray-700 uppercase font-bold text-[11px] tracking-wider border-b border-gray-200">
+              <tr>
+                <th scope="col" class="py-3 px-4">Código</th>
+                <th scope="col" class="py-3 px-4">Servicio</th>
+                <th scope="col" class="py-3 px-4">Especie</th>
+                <th scope="col" class="py-3 px-4">Duración</th>
+                <th scope="col" class="py-3 px-4">Precio</th>
+                <th scope="col" class="py-3 px-4 text-center">Categorias</th>
+              </tr>
+             </thead>
+
+              <tbody class="divide-y divide-gray-100">
+
+              <!--Fila 1 generales-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Consultas">
+                <td class="py-3 px-4 text-gray-400 font-mono">SV001</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>🩺</span>Consulta General
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro / Gato / Aves</td>
+                <td class="py-3 px-4">30 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$15.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Consultas</span>
+                </td>
+              </tr>
+
+              <!--Fila 2-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Consultas">
+                <td class="py-3 px-4 text-gray-400 font-mono">SV002</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>🛑</span>Consulta Urgencias
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro / Gato / Aves</td>
+                <td class="py-3 px-4">30 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$25.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Consultas</span>
+                </td>
+              </tr>
+
+              <!--Fila 3-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Consultas">
+                <td class="py-3 px-4 text-gray-400 font-mono">SV003</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>🩺</span>Control postoperatorio
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro / Gato</td>
+                <td class="py-3 px-4">30 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$18.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Consultas</span>
+                </td>
+              </tr>
+
+              <!--Fila 4-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Consultas">
+                <td class="py-3 px-4 text-gray-400 font-mono">SV004</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>🩺</span>Consulta animales exóticos
+                  </div>
+                </td>
+                <td class="py-3 px-4">Otros</td>
+                <td class="py-3 px-4">30 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$15.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Consultas</span>
+                </td>
+              </tr>
+
+              <!--Fila 5-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Consultas">
+                <td class="py-3 px-4 text-gray-400 font-mono">SV005</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>🩺</span>Segunda opinión médica
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro / Gato</td>
+                <td class="py-3 px-4">15 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$20.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Consultas</span>
+                </td>
+              </tr>
+
+              <!--Fila 6 vacunas-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Vacunación">
+                <td class="py-3 px-4 text-gray-400 font-mono">VA001</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>💉</span>Vacuna antirrábica canina
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro</td>
+                <td class="py-3 px-4">10 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$12.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Vacunación</span>
+                </td>
+              </tr>
+
+              <!--Fila 7-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Vacunación">
+                <td class="py-3 px-4 text-gray-400 font-mono">VA002</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>💉</span>Vacuna séxtuple canina
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro</td>
+                <td class="py-3 px-4">10 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$17.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Vacunación</span>
+                </td>
+              </tr>
+
+              <!--Fila 8-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Vacunación">
+                <td class="py-3 px-4 text-gray-400 font-mono">VA003</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>💉</span>Vacuna octuple canina
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro</td>
+                <td class="py-3 px-4">10 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$19.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Vacunación</span>
+                </td>
+              </tr>
+
+              <!--Fila 9-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Vacunación">
+                <td class="py-3 px-4 text-gray-400 font-mono">VA004</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>💉</span>Vacuna bivalente felina
+                  </div>
+                </td>
+                <td class="py-3 px-4">Gato</td>
+                <td class="py-3 px-4">10 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$15.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Vacunación</span>
+                </td>
+              </tr>
+
+              <!--Fila 10-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Vacunación">
+                <td class="py-3 px-4 text-gray-400 font-mono">VA005</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>💉</span>Vacuna triple felina
+                  </div>
+                </td>
+                <td class="py-3 px-4">Gato</td>
+                <td class="py-3 px-4">10 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$20.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Vacunación</span>
+                </td>
+              </tr>
+
+              <!--Fila 11 Cirugía-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Cirugía">
+                <td class="py-3 px-4 text-gray-400 font-mono">CR001</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>⚕️</span>Esterilización / Castración canina
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro</td>
+                <td class="py-3 px-4">60 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$50.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Cirugía</span>
+                </td>
+              </tr>
+
+              <!--Fila 12-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Cirugía">
+                <td class="py-3 px-4 text-gray-400 font-mono">CR002</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>⚕️</span>Esterilización / Castración felina
+                  </div>
+                </td>
+                <td class="py-3 px-4">Gato</td>
+                <td class="py-3 px-4">45 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$45.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Cirugía</span>
+                </td>
+              </tr>
+
+              <!--Fila 13-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Cirugía">
+                <td class="py-3 px-4 text-gray-400 font-mono">CR003</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>⚕️</span>Limpieza dental quirúrgica / Profilaxis
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro / Gato</td>
+                <td class="py-3 px-4">30 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$32.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Cirugía</span>
+                </td>
+              </tr>
+
+              <!--Fila 14 Desparasitación-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Desparasitación">
+                <td class="py-3 px-4 text-gray-400 font-mono">DP001</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>💊</span>Desparasitación interna
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro / Gato</td>
+                <td class="py-3 px-4">8 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$8.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Desparasitación</span>
+                </td>
+              </tr>
+
+              <!--Fila 15-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Desparasitación">
+                <td class="py-3 px-4 text-gray-400 font-mono">DP002</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>💊</span>Desparasitación externa
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro / Gato</td>
+                <td class="py-3 px-4">8 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$15.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Desparasitación</span>
+                </td>
+              </tr>
+
+              <!--Fila 16-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Desparasitación">
+                <td class="py-3 px-4 text-gray-400 font-mono">DP003</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>💊</span>Desparasitación competa
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro / Gato</td>
+                <td class="py-3 px-4">12 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$15.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Desparasitación</span>
+                </td>
+              </tr>
+
+              <!--Fila 17 Exámenes-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Exámenes">
+                <td class="py-3 px-4 text-gray-400 font-mono">EX001</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>🧑‍⚕️</span>Hemograma completo
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro / Gato</td>
+                <td class="py-3 px-4">30 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$16.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Exámenes</span>
+                </td>
+              </tr>
+
+              <!--Fila 18 Exámenes-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Exámenes">
+                <td class="py-3 px-4 text-gray-400 font-mono">EX002</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>🧑‍⚕️</span>Perfil bioquímico completo
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro / Gato</td>
+                <td class="py-3 px-4">30 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$22.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Exámenes</span>
+                </td>
+              </tr>
+
+              <!--Fila 19 Otros-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Otros">
+                <td class="py-3 px-4 text-gray-400 font-mono">OT001</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>🐾</span>Implante de Microchip de identificación
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro / Gato</td>
+                <td class="py-3 px-4">10 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$13.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Otros</span>
+                </td>
+              </tr>
+
+              <!--Fila 20-->
+              <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Otros">
+                <td class="py-3 px-4 text-gray-400 font-mono">OT002</td>
+                <td class="py-3 px-4">
+                  <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                    <span>🐾</span>Corte de uñas y limpieza de oídos
+                  </div>
+                </td>
+                <td class="py-3 px-4">Perro / Gato</td>
+                <td class="py-3 px-4">20 Min</td>
+                <td class="py-3 px-4 font-bold text-amber-600">$17.000</td>
+                <td class="py-3 px-4 text-center">
+                  <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Otros</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+
+      </div>
+
+      <div id="seccion-medicamentos" class="hidden">
+
+        <div class="flex flex-wrap gap-2 mb-6">
+          <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-teal-800 text-white" data-categoria="Todos">Todos</button>
+          <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Antibióticos">Antibióticos</button>
+          <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Antibióticos">Antiparasitarios</button>
+          <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Antibióticos">Antiinflamatorios</button>
+        </div>
+
+        <div class="bg-white rounded-2xl boarder border-gray-200 overflow-hidden shadow-sm">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-gray-600">
+              <thead class="bg-[#edf2ea] text-gray-700 uppercase font-bold text-[11px] tracking-wider border-b border-gray-200">
+                <tr>
+                  <th scope="col" class="py-3 px-4">Código</th>
+                  <th scope="col" class="py-3 px-4">Productos</th>
+                  <th scope="col" class="py-3 px-4">Especie</th>
+                  <th scope="col" class="py-3 px-4">Presentación</th>
+                  <th scope="col" class="py-3 px-4">Precio</th>
+                  <th scope="col" class="py-3 px-4">Categorias</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-gray-100">
+
+                <!--Remedios-->
+                <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Antibióticos">
+                  <td class="py-3 px-4 text-gray-400 font-mono">ME001</td>
+                  <td class="py-3 px-4">
+                    <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                      <span>💊</span>Metrobay  250mg
+                    </div>
+                  </td>
+                  <td class="py-3 px-4">Perro / Gato</td>
+                  <td class="py-3 px-4">Blíster 10 comp.</td>
+                  <td class="py-3 px-4 font-bold text-amber-600">$2.200</td>
+                  <td class="py-3 px-4 text-center">
+                    <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Antibióticos</span>
+                  </td>
+                </tr>
+                <!--Remedios-->
+                <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Antibióticos">
+                  <td class="py-3 px-4 text-gray-400 font-mono">ME001</td>
+                  <td class="py-3 px-4">
+                    <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                      <span>💊</span>Enrox 50mg
+                    </div>
+                  </td>
+                  <td class="py-3 px-4">Perro / Gato</td>
+                  <td class="py-3 px-4">Blíster 10 comp.</td>
+                  <td class="py-3 px-4 font-bold text-amber-600">$4.200</td>
+                  <td class="py-3 px-4 text-center">
+                    <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Antibióticos</span>
+                  </td>
+                </tr>
+                <!--Remedios-->
+                <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Antibióticos">
+                  <td class="py-3 px-4 text-gray-400 font-mono">ME001</td>
+                  <td class="py-3 px-4">
+                    <div class="font-bold text-gray-900 flex items-center gap-1.5">
+                      <span>💊</span>Enrox 50mg
+                    </div>
+                  </td>
+                  <td class="py-3 px-4">Perro / Gato</td>
+                  <td class="py-3 px-4">Blíster 10 comp.</td>
+                  <td class="py-3 px-4 font-bold text-amber-600">$3.200</td>
+                  <td class="py-3 px-4 text-center">
+                    <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Antibióticos</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+    </main>
+  
+</body>
+</html>
