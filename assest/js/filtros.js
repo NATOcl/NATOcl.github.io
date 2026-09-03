@@ -8,6 +8,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let categoriaActual = "Todos";
 
+  // Inicializar estado por defecto: Servicios visible, Medicamentos oculto
+  function inicializarVista() {
+    if (seccionServicios && seccionMedicamentos) {
+      seccionServicios.classList.remove("hidden");
+      seccionMedicamentos.classList.add("hidden");
+    }
+    if (btnServicios && btnMedicamentos) {
+      activarPestana(btnServicios, btnMedicamentos);
+    }
+  }
+
   // 2. Cambio entre pestañas
   if (btnServicios && btnMedicamentos) {
     btnServicios.addEventListener("click", () => {
@@ -123,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     aplicarFiltros();
   }
 
-  // Inicialización
+  // Ejecución inicial al cargar
+  inicializarVista();
   aplicarFiltros();
 });
