@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./assest/css/output.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/preline/dist/preline.js"></script>
+  <title>PetCare | Blogs</title>
+</head>
+
+<body>
+    <!-- Inicio Menu -->
+    <header class="flex flex-wrap lg:justify-start lg:flex-nowrap z-50 w-full py-4 bg-white border-b border-gray-200">
+    <nav class="relative max-w-7xl w-full flex flex-wrap lg:grid lg:grid-cols-12 basis-full items-center px-4 md:px-6 lg:px-8 mx-auto">
+        <div class="lg:col-span-3 flex items-center">
+        <!-- Logo fixed -->
+        <a class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="index.html" aria-label="Preline">
+            <img class="h-14 w-auto object-contain" src="./assest/images/isotipo.png" alt="Logo Veterinaria">
+        </a>
+        <!-- End Logo fixed-->
+        </div>
+
+        <!-- Button Groups -->
+        <div class="flex items-center gap-x-1 lg:gap-x-2 ms-auto py-1 lg:ps-6 lg:order-3 lg:col-span-3">
+        <!-- boton buscar -->
+        <button type="button" class="size-9.5 relative flex justify-center items-center rounded-xl bg-gray-100 border border-gray-200 text-gray-800 hover:bg-gray-200 focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
+            <span class="sr-only">Search</span>
+            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </button>
+        <!-- boton carrito -->
+        <button type="button" class="size-9.5 relative flex justify-center items-center rounded-xl bg-gray-100 border border-gray-200 text-gray-800 hover:bg-gray-200 focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
+            <span class="sr-only">Cart</span>
+            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+        </button>
+        <!-- boton inciar sesion -->
+        <button type="button" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl bg-teal-700 text-white hover:bg-teal-800 focus:outline-none transition disabled:opacity-50 disabled:pointer-events-none">
+            iniciar sesion
+        </button>
+
+        <div class="lg:hidden">
+            <button type="button" class="hs-collapse-toggle size-9.5 flex justify-center items-center text-sm font-semibold rounded-xl bg-layer border border-layer-line text-layer-foreground hover:bg-layer-hover focus:outline-hidden focus:bg-layer-focus disabled:opacity-50 disabled:pointer-events-none" id="hs-pro-hcail-collapse" aria-expanded="false" aria-controls="hs-pro-hcail" aria-label="Toggle navigation" data-hs-collapse="#hs-pro-hcail">
+            <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+            <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+        </div>
+        </div>
+        <!-- End Button Group -->
+
+        <!-- Collapse -->
+        <div id="hs-pro-hcail" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow lg:block lg:w-auto lg:basis-auto lg:order-2 lg:col-span-6" aria-labelledby="hs-pro-hcail-collapse" role="region">
+        <div class="flex flex-col gap-y-4 gap-x-0 mt-5 lg:flex-row lg:justify-center lg:items-center lg:gap-y-0 lg:gap-x-7 lg:mt-0">
+            <div>
+            <a class="relative inline-block text-foreground focus:outline-hidden " href="index.html">Inicio</a>
+            </div>
+            <div>
+            <a class="relative inline-block text-foreground focus:outline-hidden " href="productos.html">Productos</a>
+            </div>
+            <div>
+            <a class="relative inline-block text-foreground focus:outline-hidden " href="aboutus.html">Nosotros</a>
+            </div>
+            <div>
+            <!-- Menú activo en verde -->
+            <a class="relative inline-block text-teal-700 font-semibold focus:outline-none before:absolute before:bottom-0.5 before:inset-x-0 before:w-full before:h-0.5 before:bg-teal-700" href="blogs.html" aria-current="page">Blogs</a>
+            </div>
+            <div>
+            <a class="relative inline-block text-foreground focus:outline-hidden " href="contacto.html">Contacto</a>
+            </div>
+        </div>
+        </div>
+        <!-- End Collapse -->
+    </nav>
+    </header> 
+    <!-- Fin Menu -->
+    
+    <!-- INICIO SECCIÓN BLOGS -->
+    <section class="bg-[#eff3ea] py-16 md:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Título Principal de la sección -->
+            <div class="w-full flex justify-center" style="margin-bottom: 60px; padding-top: 20px;">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 uppercase tracking-widest text-center">
+                    NOTICIAS <span class="text-[#598363]">IMPORTANTES</span>
+                </h1>
+            </div>
+
+            <!-- Contenedor general -->
+            <div class="space-y-16">
+
+                <!-- TARJETA CASO #1  -->
+                <div class="bg-white p-8 md:p-10 rounded-3xl shadow-sm flex flex-col md:flex-row gap-8 items-center mb-12">
+                    
+                    <!-- Lado Izquierdo: Textos y Botón -->
+                    <div class="w-full md:w-1/2 flex flex-col justify-center space-y-6">
+                        <div>
+                            <span class="inline-block bg-[#e1ebd9] text-[#486851] text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full"> Dato Curioso </span>
+                        </div>
+                        
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight"> Síntomas Curiosos </h2>
+                        
+                        <div class="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
+                            <p>En esta oportunidad, nuestro equipo enfrentó un diagnóstico poco común en un felino doméstico que presentaba síntomas atípicos de intolerancia alimentaria.</p>
+                            <p>Conoce este dato curioso cuidar la nutrición de tu mascota desde el hogar.</p>
+                        </div>
+                        
+                        <div class="pt-2">
+                            <!-- Botón verde redondeado de tu diseño original -->
+                            <a href="#" class="inline-flex items-center gap-2 bg-[#486851] hover:bg-[#395340] text-white text-sm font-semibold px-6 py-3 rounded-full shadow-sm transition-colors duration-200 w-max"> Ver caso <span class="text-[10px]">▼</span> </a>
+                        </div>
+                    </div>
+
+        
+                    <div class="w-full md:w-1/2 flex justify-center">
+                        <div class="relative w-full aspect-[4/3]"> <img src="./assest/images/sanan2cat.jpg" alt="Imagen Caso 1" class="w-full h-64 md:h-80 lg:h-96 object-cover rounded-3xl shadow-md"/>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETA CASO #2 -->
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+                    
+                    <!-- Lado Izquierdo: Textos y Botón -->
+                    <div class="w-full md:w-1/2 flex flex-col justify-center space-y-6">
+                        <div>
+                            <span class="inline-block bg-[#e1ebd9] text-[#486851] text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+                                Rehabilitación
+                            </span>
+                        </div>
+                        
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight"> Patitas Esperanzadoras </h2>
+                        
+                        <div class="space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
+                            <p>Descubre la sorprendente recuperación de Max, un perro rescatado con una lesión compleja en sus patas traseras.</p>
+                            <p>Gracias a la terapia de rehabilitación intensiva en nuestra clínica y el uso de tecnología de fisioterapia canina, logró volver a correr felizmente. Conoce todo el proceso.</p>
+                        </div>
+                        
+                        <div class="pt-2"> <a href="#" class="inline-flex items-center gap-2 bg-[#486851] hover:bg-[#395340] text-white text-sm font-semibold px-6 py-3 rounded-full shadow-sm transition-colors duration-200 w-max"> Ver caso <span class="text-[10px]">▼</span> </a>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 flex justify-center items-center">
+                        <div class="relative w-full aspect-[4/3]"> <img src="./assest/images/maxfeliz.jpg" alt="Imagen Caso 2"  class="w-full h-64 md:h-80 lg:h-96 object-cover rounded-3xl shadow-md"/>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- FIN SECCIÓN BLOGS -->
+
+    <!-- Inicio Footer -->
+    <footer class="bg-[#19241c] text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="flex flex-col md:flex-row md:justify-between gap-8">
+
+                <div class="md:w-5/12 space-y-4">
+                    <div class="flex items-center gap-2 text-white font-bold text-lg">
+                        <span class="text-teal-500">🐾</span>VetCare
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed max-w-sm">Lorem ipsum dolor sit ames</p>
+
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <span>📍</span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Av.+Vicu%C3%B1a+Mackenna+4917,+San+Joaqu%C3%ADn" target="_blank" class="hover:text-white transition-colors underline decoration-gray-500 underline-offset-2">
+                                Av. Vicuña Mackenna 4917, en la comuna de San Joaquín
+                            </a>
+                        </li>
+                        <li class="space-y-2 text-xs text-gray-300">
+                            <span>📞</span>
+                            <a href="tel:+56912345678" class="hover:text-white transition-colors">
+                                +56 9 1234 5678
+                            </a>
+                        </li>
+                        <li class="space-y-2 text-xs text-gray-300">
+                            <span>✉️</span>
+                            <a href="mailto:vetcare@duocuc.cl" class="hover:text-white transition-colors">
+                                vetcare@duocuc.cl
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="pt-2">
+                        <h5 class="text-white text-xs font-semibold mb-1">Horarios de atencion</h5>
+                        <p class="text-xs text-gray-400">Lun–Vie: 8:00 - 12:00</p>
+                        <p class="text-xs text-gray-400">Sab-Dom: 9:00 - 15:00</p>
+                        <p class="text-xs text-gray-400">Urgencias: 24/7</p>
+                    </div>
+                </div>
+
+                <div class="md:w-2/12 space-y-3">
+                    <h4 class="text-white font-semibold text-sm">Clinica</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li> <a href="index.html" class="hover:text-white transition">Inicio</a></li>
+                        <li> <a href="productos.html" class="hover:text-white transition">Productos</a></li>
+                        <li> <a href="aboutus.html" class="hover:text-white transition">Nosotros</a></li>
+                        <li> <a href="blogs.html" class="hover:text-white transition">Blogs</a></li>
+                        <li> <a href="contacto.html" class="hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:w-2/12 space-y-3">
+                    <h4 class="text-white font-semibold text-sm">Productos</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li> <a href="#" class="hover:text-white transition">Consulta General</a></li>
+                        <li> <a href="#" class="hover:text-white transition">Vacunas</a></li>
+                        <li> <a href="#" class="hover:text-white transition">Cirugía</a></li>
+                        <li> <a href="#" class="hover:text-white transition">Urgencias</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:w-2/12 space-y-3">
+                    <h4 class="text-white font-semibold text-sm">Cuenta</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li> <a href="#" class="hover:text-white transition">Crear Cuenta</a></li>
+                        <li> <a href="#" class="hover:text-white transition">Iniciar Sesion</a></li>
+                        <li> <a href="#" class="hover:text-white transition">Perfil</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
