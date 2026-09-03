@@ -1,126 +1,128 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. SELECCIÓN DE ELEMENTOS
-  const contenedorTabs = document.querySelector(".inline-flex.rounded-xl.bg-gray-200\\/60");
-  const botonesTabs = contenedorTabs ? contenedorTabs.querySelectorAll("button") : [];
-
-  const btnServicios = botonesTabs[0];
-  const btnMedicamentos = botonesTabs[1];
-
-  // Secciones completas
+  // 1. Selección de elementos
+  const btnServicios = document.getElementById("btn-servicios");
+  const btnMedicamentos = document.getElementById("btn-medicamentos");
   const seccionServicios = document.getElementById("seccion-servicios");
   const seccionMedicamentos = document.getElementById("seccion-medicamentos");
   const inputBusqueda = document.getElementById("input-busqueda");
 
-  // Clases CSS base para categorías (verde = filtro activo)
-  const CLASES_ACTIVO = ["bg-teal-800", "text-white"];
-  const CLASES_INACTIVO = ["bg-white", "border", "border-gray-300", "text-gray-700"];
+  let categoriaActual = "Todos";
 
-  // 2. CAMBIO DE PESTAÑAS (Oculta/Muestra la sección completa correspondiente)
-  function cambiarPestana(activa, inactiva, mostrarSeccion, ocultarSeccion) {
-    // Estilos del botón pestaña activo
-    activa.className = "py-2 px-4 text-xs font-semibold rounded-lg bg-teal-800 text-white shadow-sm flex items-center gap-2";
-    const badgeActivo = activa.querySelector("span");
-    if (badgeActivo) badgeActivo.className = "bg-teal-900/50 text-white text-[10px] px-1.5 py-0.5 rounded-full";
-
-    // Estilos del botón pestaña inactivo
-    inactiva.className = "py-2 px-4 text-xs font-semibold rounded-lg text-gray-600 hover:text-gray-900 flex items-center gap-2";
-    const badgeInactivo = inactiva.querySelector("span");
-    if (badgeInactivo) badgeInactivo.className = "bg-gray-300 text-gray-700 text-[10px] px-1.5 py-0.5 rounded-full";
-
-    // Mostrar/Ocultar sección entera (incluye sus botones de filtro)
-    if (mostrarSeccion) mostrarSeccion.classList.remove("hidden");
-    if (ocultarSeccion) ocultarSeccion.classList.add("hidden");
-  }
-
+  // 2. Cambio entre pestañas
   if (btnServicios && btnMedicamentos) {
     btnServicios.addEventListener("click", () => {
-      cambiarPestana(btnServicios, btnMedicamentos, seccionServicios, seccionMedicamentos);
+      activarPestana(btnServicios, btnMedicamentos);
+      seccionServicios.classList.remove("hidden");
+      seccionMedicamentos.classList.add("hidden");
+      resetFiltros();
     });
 
     btnMedicamentos.addEventListener("click", () => {
-      cambiarPestana(btnMedicamentos, btnServicios, seccionMedicamentos, seccionServicios);
+      activarPestana(btnMedicamentos, btnServicios);
+      seccionMedicamentos.classList.remove("hidden");
+      seccionServicios.classList.add("hidden");
+      resetFiltros();
     });
   }
 
-  // 3. RENDERIZADO Y FILTRADO DE CATEGORÍAS
-  function obtenerSeccionActiva() {
-    if (seccionMedicamentos && !seccionMedicamentos.classList.contains("hidden")) {
-      return seccionMedicamentos;
+  // Estilos de botones de pestaña
+  function activarPestana(activa, inactiva) {
+    activa.className =
+      "py-2 px-4 text-xs font-semibold rounded-lg bg-teal-800 text-white shadow-sm flex items-center gap-2";
+    inactiva.className =
+      "py-2 px-4 text-xs font-semibold rounded-lg text-gray-600 hover:text-gray-900 flex items-center gap-2";
+
+    const badgeActivo = activa.querySelector("span");
+    const badgeInactivo = inactiva.querySelector("span");
+
+    if (badgeActivo) {
+      badgeActivo.className =
+        "bg-teal-900/50 text-white text-[10px] px-1.5 py-0.5 rounded-full";
     }
-    return seccionServicios;
+    if (badgeInactivo) {
+      badgeInactivo.className =
+        "bg-gray-300 text-gray-700 text-[10px] px-1.5 py-0.5 rounded-full";
+    }
   }
 
-  function renderizarBotones(botones, categoriaActiva) {
-    botones.forEach((btn) => {
-      const cat = btn.getAttribute("data-categoria");
-      
-      // Limpieza profunda de clases
-      btn.classList.remove("bg-teal-800", "bg-teal-700", "bg-teal-800", "text-white", "bg-white", "border", "border-gray-300", "text-gray-700");
+  // 3. Botones de categoría (delegación de eventos)
+  document.addEventListener("click", (e) => {
+    const btnFiltro = e.target.closest(".btn-filtro");
 
-      if (cat === categoriaActiva) {
-        btn.classList.add(...CLASES_ACTIVO);
-        btn.dataset.activo = "true";
-      } else {
-        btn.classList.add(...CLASES_INACTIVO);
-        btn.dataset.activo = "false";
-      }
-    });
-  }
+    if (btnFiltro) {
+      const seccionActiva = obtenerSeccionActiva();
+      if (!seccionActiva) return;
 
-  const botonesFiltro = document.querySelectorAll(".btn-filtro");
-
-  botonesFiltro.forEach((boton) => {
-    boton.addEventListener("click", () => {
-      const seccionActual = obtenerSeccionActiva();
-      const botonesDeEstaSeccion = seccionActual.querySelectorAll(".btn-filtro");
-      const categoriaClickeada = boton.getAttribute("data-categoria");
-
-      const estaActivo = boton.dataset.activo === "true";
-      let nuevaCategoriaActiva = categoriaClickeada;
-
-      // Si se hace clic en una categoría ya activa (salvo "Todos"), se vuelve a "Todos"
-      if (estaActivo && categoriaClickeada !== "Todos") {
-        nuevaCategoriaActiva = "Todos";
-      }
-
-      // Pintar los botones correctamente
-      renderizarBotones(botonesDeEstaSeccion, nuevaCategoriaActiva);
-
-      // Filtrar filas
-      const filas = seccionActual.querySelectorAll(".fila-catalogo");
-      filas.forEach((fila) => {
-        const categoriaFila = fila.getAttribute("data-categoria");
-        if (nuevaCategoriaActiva === "Todos" || categoriaFila === nuevaCategoriaActiva) {
-          fila.classList.remove("hidden");
-        } else {
-          fila.classList.add("hidden");
-        }
+      seccionActiva.querySelectorAll(".btn-filtro").forEach((btn) => {
+        btn.className =
+          "btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50";
       });
-    });
-  });
 
-  // Inicializar estado por defecto
-  [seccionServicios, seccionMedicamentos].forEach((seccion) => {
-    if (seccion) {
-      const btns = seccion.querySelectorAll(".btn-filtro");
-      renderizarBotones(btns, "Todos");
+      btnFiltro.className =
+        "btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-teal-800 text-white";
+
+      categoriaActual = btnFiltro.getAttribute("data-categoria") || "Todos";
+      aplicarFiltros();
     }
   });
 
-  // 4. BÚSQUEDA GLOBAL
+  // 4. Búsqueda por texto
   if (inputBusqueda) {
-    inputBusqueda.addEventListener("input", (e) => {
-      const termino = e.target.value.toLowerCase().trim();
-      const filasTodas = document.querySelectorAll(".fila-catalogo");
-
-      filasTodas.forEach((fila) => {
-        const textoFila = fila.textContent.toLowerCase();
-        if (textoFila.includes(termino)) {
-          fila.classList.remove("hidden");
-        } else {
-          fila.classList.add("hidden");
-        }
-      });
+    inputBusqueda.addEventListener("input", () => {
+      aplicarFiltros();
     });
   }
+
+  // 5. Filtrado dinámico
+  function aplicarFiltros() {
+    const textoBusqueda = inputBusqueda ? inputBusqueda.value.toLowerCase().trim() : "";
+    const seccionActiva = obtenerSeccionActiva();
+
+    if (!seccionActiva) return;
+
+    const filas = seccionActiva.querySelectorAll(".fila-catalogo");
+
+    filas.forEach((fila) => {
+      const categoriaFila = fila.getAttribute("data-categoria");
+      const textoFila = fila.innerText.toLowerCase();
+
+      const cumpleCategoria =
+        categoriaActual === "Todos" || categoriaFila === categoriaActual;
+      const cumpleBusqueda =
+        textoBusqueda === "" || textoFila.includes(textoBusqueda);
+
+      if (cumpleCategoria && cumpleBusqueda) {
+        fila.classList.remove("hidden");
+      } else {
+        fila.classList.add("hidden");
+      }
+    });
+  }
+
+  function obtenerSeccionActiva() {
+    if (!seccionServicios || !seccionMedicamentos) return null;
+    return seccionServicios.classList.contains("hidden")
+      ? seccionMedicamentos
+      : seccionServicios;
+  }
+
+  function resetFiltros() {
+    categoriaActual = "Todos";
+    if (inputBusqueda) inputBusqueda.value = "";
+
+    const seccionActiva = obtenerSeccionActiva();
+    if (seccionActiva) {
+      seccionActiva.querySelectorAll(".btn-filtro").forEach((btn) => {
+        const esTodos = btn.getAttribute("data-categoria") === "Todos";
+        btn.className = esTodos
+          ? "btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-teal-800 text-white"
+          : "btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50";
+      });
+    }
+
+    aplicarFiltros();
+  }
+
+  // Inicialización
+  aplicarFiltros();
 });

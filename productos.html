@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./assest/css/output.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/preline/dist/preline.js"></script>
-  <script src="./assest/js/filtros.js"></script>
+  <script src="./assest/js/filtros.js" defer></script>
   <title>PetCare | Productos</title>
 <body>
 
@@ -86,11 +86,11 @@
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
         <!--Cambios entre servicios-->
         <div class="inline-flex rounded-xl bg-gray-200/60 p-1 self-start">
-          <button class="py-2 px-4 text-xs font-semibold rounded-lg bg-teal-800 text-white shadow-sm flex items-center gap-2">
+          <button id="btn-servicios" class="py-2 px-4 text-xs font-semibold rounded-lg bg-teal-800 text-white shadow-sm flex items-center gap-2">
             Servicios
             <span class="bg-teal-900/50 text-white text-[10px] px-1.5 py-0.5 rounded-full" >31</span>
           </button>
-          <button class="py-2 px-4 text-xs font-semibold rounded-lg text-gray-600 hover:text-gray-900 flex items-center gap-2">
+          <button id="btn-medicamentos" class="py-2 px-4 text-xs font-semibold rounded-lg text-gray-600 hover:text-gray-900 flex items-center gap-2">
             Medicamentos y Vacunas
             <span class="bg-gray-300 text-gray-700 text-[10px] px-1.5 py-0.5 rounded-full">22</span>
           </button>
@@ -461,18 +461,17 @@
               </tr>
             </tbody>
           </table>
-          
         </div>
-
       </div>
+    </div>
 
-      <div id="seccion-medicamentos" class="hidden">
+      <div id="seccion-medicamentos">
 
         <div class="flex flex-wrap gap-2 mb-6">
           <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-teal-800 text-white" data-categoria="Todos">Todos</button>
           <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Antibióticos">Antibióticos</button>
-          <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Antibióticos">Antiparasitarios</button>
-          <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Antibióticos">Antiinflamatorios</button>
+          <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Antiparasitarios">Antiparasitarios</button>
+          <button class="btn-filtro px-3 py-1 text-xs font-medium rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50" data-categoria="Antiinflamatorios">Antiinflamatorios</button>
         </div>
 
         <div class="bg-white rounded-2xl boarder border-gray-200 overflow-hidden shadow-sm">
@@ -507,8 +506,8 @@
                   </td>
                 </tr>
                 <!--Remedios-->
-                <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Antibióticos">
-                  <td class="py-3 px-4 text-gray-400 font-mono">ME001</td>
+                <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Antiparasitarios">
+                  <td class="py-3 px-4 text-gray-400 font-mono">MA001</td>
                   <td class="py-3 px-4">
                     <div class="font-bold text-gray-900 flex items-center gap-1.5">
                       <span>💊</span>Enrox 50mg
@@ -518,22 +517,22 @@
                   <td class="py-3 px-4">Blíster 10 comp.</td>
                   <td class="py-3 px-4 font-bold text-amber-600">$4.200</td>
                   <td class="py-3 px-4 text-center">
-                    <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Antibióticos</span>
+                    <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Antiparasitarios</span>
                   </td>
                 </tr>
                 <!--Remedios-->
-                <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Antibióticos">
-                  <td class="py-3 px-4 text-gray-400 font-mono">ME001</td>
+                <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Antiinflamatorios">
+                  <td class="py-3 px-4 text-gray-400 font-mono">MC001</td>
                   <td class="py-3 px-4">
                     <div class="font-bold text-gray-900 flex items-center gap-1.5">
-                      <span>💊</span>Enrox 50mg
+                      <span>💊</span>Kapkan 20mg
                     </div>
                   </td>
                   <td class="py-3 px-4">Perro / Gato</td>
-                  <td class="py-3 px-4">Blíster 10 comp.</td>
+                  <td class="py-3 px-4">Blíster 8 comp.</td>
                   <td class="py-3 px-4 font-bold text-amber-600">$3.200</td>
                   <td class="py-3 px-4 text-center">
-                    <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Antibióticos</span>
+                    <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Antiinflamatorios</span>
                   </td>
                 </tr>
               </tbody>
@@ -541,8 +540,6 @@
           </div>
         </div>
       </div>
-
-
     </main>
   
 </body>
