@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Selección de elementos
-  // Scrip realizado por GEMENI IA
   const btnServicios = document.getElementById("btn-servicios");
   const btnMedicamentos = document.getElementById("btn-medicamentos");
   const seccionServicios = document.getElementById("seccion-servicios");
@@ -8,6 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputBusqueda = document.getElementById("input-busqueda");
 
   let categoriaActual = "Todos";
+
+  // --- CAPTURAR BÚSQUEDA DE INDEX.HTML ---
+  const urlParams = new URLSearchParams(window.location.search);
+  const terminoBusqueda = urlParams.get('buscar');
+
+  if (terminoBusqueda && inputBusqueda) {
+    inputBusqueda.value = terminoBusqueda;
+  }
+  // ----------------------------------------
 
   // Inicializar estado por defecto: Servicios visible, Medicamentos oculto
   function inicializarVista() {
@@ -57,10 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // 3. Botones de categoría (delegación de eventos)
+  // 3. Delegación de eventos para clics (Filtros y Agregar al Carrito)
   document.addEventListener("click", (e) => {
+    // --- LÓGICA DE FILTROS ---
     const btnFiltro = e.target.closest(".btn-filtro");
-
     if (btnFiltro) {
       const seccionActiva = obtenerSeccionActiva();
       if (!seccionActiva) return;
@@ -75,8 +82,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
       categoriaActual = btnFiltro.getAttribute("data-categoria") || "Todos";
       aplicarFiltros();
+      return;
+    }
+
+    // --- NUEVA LÓGICA: AGREGAR AL CARRITO ---
+    const btnAgregar = e.target.closest(".btn-agregar-carrito");
+    if (btnAgregar) {
+      const codigo = btnAgregar.getAttribute("data-codigo");
+      const nombre = btnAgregar.getAttribute("data-nombre");
+      const precio = parseInt(btnAgregar.getAttribute("data-precio"), 10);
+
+      if (codigo && nombre && !isNaN(precio)) {
+        agregarAlCarrito({ codigo, nombre, precio });
+        
+        // Feedback visual en el botón
+        const textoOriginal = btnAgregar.textContent;
+        btnAgregar.textContent = "¡Agregado!";
+        btnAgregar.classList.add("bg-green-700");
+
+        setTimeout(() => {
+          btnAgregar.textContent = textoOriginal;
+          btnAgregar.classList.remove("bg-green-700");
+        }, 1000);
+      }
     }
   });
+
+  // Función auxiliar para guardar el producto en localStorage
+  function agregarAlCarrito(producto) {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    const index = carrito.findIndex((item) => item.codigo === producto.codigo);
+
+    if (index !== -1) {
+      carrito[index].cantidad += 1;
+    } else {
+      carrito.push({
+        codigo: producto.codigo,
+        nombre: producto.nombre,
+        precio: producto.precio,
+        cantidad: 1,
+      });
+    }
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    
+    // Disparar evento personalizado para actualizar el contador si tienes un badge en el header
+    window.dispatchEvent(new Event("carritoActualizado"));
+  }
 
   // 4. Búsqueda por texto
   if (inputBusqueda) {

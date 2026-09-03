@@ -22,15 +22,23 @@
         <!-- Button Group -->
         <!-- boton buscar -->
         <div class="flex items-center gap-x-1 lg:gap-x-2 ms-auto py-1 lg:ps-6 lg:order-3 lg:col-span-3">
-        <button type="button" class="size-9.5 relative flex justify-center items-center rounded-xl bg-gray-100 border border-gray-200 text-gray-800 hover:bg-gray-200 focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-            <span class="sr-only">Search</span>
-            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
-        </button>
+        <form action="productos.html" method="GET" class="relative flex items-center">
+            <input type="text" name="buscar" placeholder="Busca un producto" class="size-9.5 focus:w-48 w-9.5 transition-all duration-300 ease-in-out pl-3 pr-8 text-xs rounded-xl bg-gray-100 border border-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-700 cursor-pointer focus:cursor-text"/>
+            <button type="submit" class="absolute right-0 size-9.5 flex justify-center items-center text-gray-800 hover:text-teal-700 focus:outline-none pointer-events-none">
+                <span class="sr-only">Search</span>
+                <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"  stroke-linejoin="round">
+                    <path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/>
+                </svg>
+            </button>
+        </form>
+        <!-- fin boton buscar -->
         <!-- boton carrito -->
-        <button type="button" class="size-9.5 relative flex justify-center items-center rounded-xl bg-gray-100 border border-gray-200 text-gray-800 hover:bg-gray-200 focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-            <span class="sr-only">Cart</span>
-            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-        </button>
+        <a href="carrito.html " class="size-9.5 relative flex justify-center items-center rounded-xl bg-gray-100 border border-gray-200 text-gray-800 hover:bg-gray-200 focus:outline-none">
+            <span class="sr-only">Carrito</span>
+            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
+                <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+            </svg>
+        </a>
         <!-- boton inciar sesion -->
         <button type="button" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl bg-teal-700 text-white hover:bg-teal-800 focus:outline-none transition disabled:opacity-50 disabled:pointer-events-none">
             inciar sesion
@@ -108,7 +116,7 @@
         </div>
       </div>
       
-      <div id="seccion-servicios" class="hidden">
+      <div id="seccion-servicios">
 
       <!--filtros-->
 
@@ -135,6 +143,7 @@
                 <th scope="col" class="py-3 px-4">Duración</th>
                 <th scope="col" class="py-3 px-4">Precio</th>
                 <th scope="col" class="py-3 px-4 text-center">Categorias</th>
+                <th scope="col" class="py-3 px-4 text-center">Agregar</th>
               </tr>
              </thead>
 
@@ -154,6 +163,17 @@
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Consultas</span>
                 </td>
+
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="SV001"
+                  data-nombre="Consulta General"
+                  data-precio="15000">
+                  Agregar
+                  </button>
+                </td>
               </tr>
 
               <!--Fila 2-->
@@ -169,6 +189,16 @@
                 <td class="py-3 px-4 font-bold text-amber-600">$25.000</td>
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Consultas</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="SV002"
+                  data-nombre="Consulta Urgencias"
+                  data-precio="25000">
+                  Agregar
+                  </button>
                 </td>
               </tr>
 
@@ -186,6 +216,16 @@
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Consultas</span>
                 </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="SV003"
+                  data-nombre="Control postoperatorio"
+                  data-precio="18000">
+                  Agregar
+                  </button>
+                </td>
               </tr>
 
               <!--Fila 4-->
@@ -201,6 +241,16 @@
                 <td class="py-3 px-4 font-bold text-amber-600">$15.000</td>
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Consultas</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="SV004"
+                  data-nombre="Consulta animales exóticos"
+                  data-precio="15000">
+                  Agregar
+                  </button>
                 </td>
               </tr>
 
@@ -218,6 +268,16 @@
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Consultas</span>
                 </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="SV005"
+                  data-nombre="Segunda opinión médica"
+                  data-precio="20000">
+                  Agregar
+                  </button>
+                </td>
               </tr>
 
               <!--Fila 6 vacunas-->
@@ -233,6 +293,16 @@
                 <td class="py-3 px-4 font-bold text-amber-600">$12.000</td>
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Vacunación</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="VA001"
+                  data-nombre="Vacuna antirrábica canina"
+                  data-precio="12000">
+                  Agregar
+                  </button>
                 </td>
               </tr>
 
@@ -250,6 +320,16 @@
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Vacunación</span>
                 </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="VA002"
+                  data-nombre="Vacuna séxtuple canina"
+                  data-precio="17000">
+                  Agregar
+                  </button>
+                </td>
               </tr>
 
               <!--Fila 8-->
@@ -265,6 +345,16 @@
                 <td class="py-3 px-4 font-bold text-amber-600">$19.000</td>
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Vacunación</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="VA003"
+                  data-nombre="Vacuna octuple canina"
+                  data-precio="19000">
+                  Agregar
+                  </button>
                 </td>
               </tr>
 
@@ -282,6 +372,16 @@
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Vacunación</span>
                 </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="VA004"
+                  data-nombre="Vacuna bivalente felina"
+                  data-precio="15000">
+                  Agregar
+                  </button>
+                </td>
               </tr>
 
               <!--Fila 10-->
@@ -297,6 +397,16 @@
                 <td class="py-3 px-4 font-bold text-amber-600">$20.000</td>
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Vacunación</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="VA005"
+                  data-nombre="Vacuna triple felina"
+                  data-precio="20000">
+                  Agregar
+                  </button>
                 </td>
               </tr>
 
@@ -314,6 +424,16 @@
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Cirugía</span>
                 </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="CR001"
+                  data-nombre="Esterilización / Castración canina"
+                  data-precio="50000">
+                  Agregar
+                  </button>
+                </td>
               </tr>
 
               <!--Fila 12-->
@@ -329,6 +449,16 @@
                 <td class="py-3 px-4 font-bold text-amber-600">$45.000</td>
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Cirugía</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="CR002"
+                  data-nombre="Esterilización / Castración felina"
+                  data-precio="45000">
+                  Agregar
+                  </button>
                 </td>
               </tr>
 
@@ -346,6 +476,16 @@
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Cirugía</span>
                 </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="CR003"
+                  data-nombre="Limpieza dental quirúrgica / Profilaxis"
+                  data-precio="32000">
+                  Agregar
+                  </button>
+                </td>
               </tr>
 
               <!--Fila 14 Desparasitación-->
@@ -361,6 +501,16 @@
                 <td class="py-3 px-4 font-bold text-amber-600">$8.000</td>
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Desparasitación</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="DP001"
+                  data-nombre="Desparasitación interna"
+                  data-precio="8000">
+                  Agregar
+                  </button>
                 </td>
               </tr>
 
@@ -378,6 +528,16 @@
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Desparasitación</span>
                 </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="DP002"
+                  data-nombre="Desparasitación externa"
+                  data-precio="15000">
+                  Agregar
+                  </button>
+                </td>
               </tr>
 
               <!--Fila 16-->
@@ -393,6 +553,16 @@
                 <td class="py-3 px-4 font-bold text-amber-600">$15.000</td>
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Desparasitación</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="DP003"
+                  data-nombre="Desparasitación completa"
+                  data-precio="15000">
+                  Agregar
+                  </button>
                 </td>
               </tr>
 
@@ -410,6 +580,16 @@
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Exámenes</span>
                 </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="EX001"
+                  data-nombre="Hemograma completo"
+                  data-precio="16000">
+                  Agregar
+                  </button>
+                </td>
               </tr>
 
               <!--Fila 18 Exámenes-->
@@ -425,6 +605,16 @@
                 <td class="py-3 px-4 font-bold text-amber-600">$22.000</td>
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Exámenes</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="EX002"
+                  data-nombre="Perfil bioquímico completo"
+                  data-precio="22000">
+                  Agregar
+                  </button>
                 </td>
               </tr>
 
@@ -442,6 +632,16 @@
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Otros</span>
                 </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="OT001"
+                  data-nombre="Implante de Microchip de identificación"
+                  data-precio="22000">
+                  Agregar
+                  </button>
+                </td>
               </tr>
 
               <!--Fila 20-->
@@ -457,6 +657,16 @@
                 <td class="py-3 px-4 font-bold text-amber-600">$17.000</td>
                 <td class="py-3 px-4 text-center">
                   <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Otros</span>
+                </td>
+                <td class="py-3 px-4 text-center">
+                  <button
+                  type="button"
+                  class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                  data-codigo="OT002"
+                  data-nombre="Corte de uñas y limpieza de oídos"
+                  data-precio="17000">
+                  Agregar
+                  </button>
                 </td>
               </tr>
             </tbody>
@@ -484,7 +694,8 @@
                   <th scope="col" class="py-3 px-4">Especie</th>
                   <th scope="col" class="py-3 px-4">Presentación</th>
                   <th scope="col" class="py-3 px-4">Precio</th>
-                  <th scope="col" class="py-3 px-4">Categorias</th>
+                  <th scope="col" class="py-3 px-4 text-center">Categorias</th>
+                  <th scope="col" class="py-3 px-4 text-center">Agregar</th>
                 </tr>
               </thead>
 
@@ -504,6 +715,16 @@
                   <td class="py-3 px-4 text-center">
                     <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Antibióticos</span>
                   </td>
+                  <td class="py-3 px-4 text-center">
+                    <button
+                    type="button"
+                    class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                    data-codigo="ME001"
+                    data-nombre="Metrobay  250mg"
+                    data-precio="2200">
+                    Agregar
+                    </button>
+                  </td>
                 </tr>
                 <!--Remedios-->
                 <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Antiparasitarios">
@@ -519,6 +740,16 @@
                   <td class="py-3 px-4 text-center">
                     <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Antiparasitarios</span>
                   </td>
+                  <td class="py-3 px-4 text-center">
+                    <button
+                    type="button"
+                    class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                    data-codigo="ME002"
+                    data-nombre="Enrox 50mg"
+                    data-precio="4200">
+                    Agregar
+                    </button>
+                  </td>
                 </tr>
                 <!--Remedios-->
                 <tr class="fila-catalogo hover:bg-gray-50/80 transition-colors" data-categoria="Antiinflamatorios">
@@ -533,6 +764,16 @@
                   <td class="py-3 px-4 font-bold text-amber-600">$3.200</td>
                   <td class="py-3 px-4 text-center">
                     <span class="bg-teal-50 text-teal-800 text-[10px] px-2 py-0.5 rounded-full font-medium">Antiinflamatorios</span>
+                  </td>
+                  <td class="py-3 px-4 text-center">
+                    <button
+                    type="button"
+                    class="btn-agregar-carrito px-3 py-1 bg-teal-700 hover:bg-teal-800 text-white font-medium text-xs rounded-lg transition active:scale-95"
+                    data-codigo="ME003"
+                    data-nombre="Kapkan 20mg"
+                    data-precio="3200">
+                    Agregar
+                    </button>
                   </td>
                 </tr>
               </tbody>
