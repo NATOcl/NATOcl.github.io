@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Selección de elementos
+  // Scrip realizado por GEMENI IA
   const btnServicios = document.getElementById("btn-servicios");
   const btnMedicamentos = document.getElementById("btn-medicamentos");
   const seccionServicios = document.getElementById("seccion-servicios");
