@@ -1,8 +1,11 @@
+
+// CODIGO CREADO CON IA
 document.addEventListener('DOMContentLoaded', () => {
   const registroForm = document.getElementById('registroForm');
   
   // Elementos del formulario
   const inputNombre = document.getElementById('nombreCompleto');
+  const inputRut = document.getElementById('rut');
   const inputCorreo = document.getElementById('correo');
   const inputContrasena = document.getElementById('contrasena');
   const inputConfirmarContrasena = document.getElementById('confirmarContrasena');
@@ -12,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Elementos de mensaje de error
   const errorNombre = document.getElementById('errorNombre');
+  const errorRut = document.getElementById('errorRut');
   const errorCorreo = document.getElementById('errorCorreo');
   const errorContrasena = document.getElementById('errorContrasena');
   const errorConfirmarContrasena = document.getElementById('errorConfirmarContrasena');
@@ -22,6 +26,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // Expresión regular para correo institucional / común
   const emailRegex = /^[a-zA-Z0-9._%+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/i;
 
+  // Algoritmo Módulo 11 para verificar la validez matemática del RUT
+  function validarRutChileno(rut) {
+    const cleanRut = rut.trim().toUpperCase();
+    
+    // Valida formato general (entre 6 y 8 números + 1 dígito verificador 0-9 o K)
+    if (!/^[0-9]{6,8}[0-9K]{1}$/.test(cleanRut)) {
+      return false;
+    }
+
+    const cuerpo = cleanRut.slice(0, -1);
+    const dvIngresado = cleanRut.slice(-1);
+
+    let suma = 0;
+    let multiplicador = 2;
+
+    for (let i = cuerpo.length - 1; i >= 0; i--) {
+      suma += parseInt(cuerpo.charAt(i), 10) * multiplicador;
+      multiplicador = multiplicador === 7 ? 2 : multiplicador + 1;
+    }
+
+    const resto = suma % 11;
+    const dvEsperadoNum = 11 - resto;
+    let dvEsperado = '';
+
+    if (dvEsperadoNum === 11) dvEsperado = '0';
+    else if (dvEsperadoNum === 10) dvEsperado = 'K';
+    else dvEsperado = dvEsperadoNum.toString();
+
+    return dvIngresado === dvEsperado;
+  }
+
   registroForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let isValid = true;
@@ -30,6 +65,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // === VALIDA NOMBRE COMPLETO ===
     if (inputNombre.value.trim() === '') {
       mostrarError(inputNombre, errorNombre, 'El nombre completo es obligatorio.');
+      isValid = false;
+    }
+
+    // === VALIDA RUT / RUN ===
+    const rutVal = inputRut.value.trim();
+    if (rutVal === '') {
+      mostrarError(inputRut, errorRut, 'El RUT es obligatorio.');
+      isValid = false;
+    } else if (/[.-]/.test(rutVal)) {
+      mostrarError(inputRut, errorRut, 'Ingresa el RUT sin puntos ni guion.');
+      isValid = false;
+    } else if (rutVal.length < 7 || rutVal.length > 9) {
+      mostrarError(inputRut, errorRut, 'El RUT debe tener entre 7 y 9 caracteres.');
+      isValid = false;
+    } else if (!validarRutChileno(rutVal)) {
+      mostrarError(inputRut, errorRut, 'El RUT ingresado no es válido.');
       isValid = false;
     }
 
@@ -108,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function limpiarErrores() {
     [
       [inputNombre, errorNombre],
+      [inputRut, errorRut],
       [inputCorreo, errorCorreo],
       [inputContrasena, errorContrasena],
       [inputConfirmarContrasena, errorConfirmarContrasena],
@@ -121,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Quita el mensaje de error cuando el usuario empieza a escribir o seleccionar
   [
     [inputNombre, errorNombre],
+    [inputRut, errorRut],
     [inputCorreo, errorCorreo],
     [inputContrasena, errorContrasena],
     [inputConfirmarContrasena, errorConfirmarContrasena],
