@@ -420,6 +420,19 @@ function deleteProduct(id) {
     }
 }
 
+//  FUNCION PARA LIMPIAR DATOS DE SESSION ALMACENADOS
+function logout(event) {
+    // Evita conflictos de navegación
+    event.preventDefault();
+
+    // Limpia la sesión del usuario si estás guardando algo en el navegador
+    localStorage.removeItem('currentUser');
+    sessionStorage.clear();
+
+    // Redirige manualmente a la página principal en la raíz
+    window.location.href = '../index.html';
+}
+
 // ==========================================================
 // 7. LISTENERS GENERALES
 // ==========================================================
