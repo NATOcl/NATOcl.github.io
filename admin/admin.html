@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - PetCare</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Menú Lateral Vertical -->
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="assetsadmin/images/isotipo.png" alt="PetCare Logo" class="brand-logo">
+                <span class="brand-title">PetCare</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#" id="menu-home" class="active" onclick="switchView('view-home')">Dashboard / Home</a></li>
+                    <li class="role-admin"><a href="#" id="menu-users" onclick="switchView('view-users')">Gestión de Usuarios</a></li>
+                    <li><a href="#" id="menu-products" onclick="switchView('view-products')">Gestión de Productos</a></li>
+                    <li><a href="index.html" id="logout-btn">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+            <div class="user-badge">
+                <span id="current-user-name">Usuario Logueado</span>
+                <small id="current-user-role">Rol</small>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <header class="topbar">
+                <h1 id="view-title">¡Hola Administrador!</h1>
+            </header>
+
+            <!-- 1. Home / Dashboard -->
+            <section id="view-home" class="admin-section">
+                <div class="welcome-box">
+                    <h2>Bienvenido al panel de control</h2>
+                    <p>Selecciona una opción del menú lateral para gestionar la tienda.</p>
+                </div>
+            </section>
+
+            <!-- 2. Mantenedor de Usuarios: Listado -->
+            <section id="view-users" class="admin-section hidden">
+                <div class="section-header">
+                    <h2>Listado de Usuarios</h2>
+                    <button class="btn btn-primary" onclick="openUserForm()">+ NUEVO USUARIO</button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>RUN</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Rol</th>
+                            <th>Región/Comuna</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table-body">
+                        <!-- Carga dinámica JS -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 3. Formulario Crear/Editar Usuario -->
+            <section id="view-user-form" class="admin-section hidden">
+                <h2 id="user-form-title">NUEVO USUARIO</h2>
+                <form id="form-user" class="admin-form" novalidate>
+                    <input type="hidden" id="user-id">
+
+                    <div class="form-group">
+                        <label for="user-run">RUN (Sin puntos ni guión. Ej: 19011022K)*</label>
+                        <input type="text" id="user-run" maxlength="9">
+                        <span class="error-msg" id="err-user-run"></span>
+                    </div>
+
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="user-name">Nombre*</label>
+                            <input type="text" id="user-name" maxlength="50">
+                            <span class="error-msg" id="err-user-name"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-lastname">Apellidos*</label>
+                            <input type="text" id="user-lastname" maxlength="100">
+                            <span class="error-msg" id="err-user-lastname"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-email">Correo Electrónico (@duoc.cl, @profesor.duoc.cl, @gmail.com)*</label>
+                        <input type="email" id="user-email" maxlength="100">
+                        <span class="error-msg" id="err-user-email"></span>
+                    </div>
+
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="user-birthdate">Fecha Nacimiento (Opcional)</label>
+                            <input type="date" id="user-birthdate">
+                        </div>
+                        <div class="form-group">
+                            <label for="user-role">Tipo de Usuario / Rol*</label>
+                            <select id="user-role">
+                                <option value="Administrador">Administrador</option>
+                                <option value="Vendedor">Vendedor</option>
+                                <option value="Cliente">Cliente</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="user-region">Región*</label>
+                            <select id="user-region">
+                                <option value="">-- Seleccione Región --</option>
+                            </select>
+                            <span class="error-msg" id="err-user-region"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-comuna">Comuna*</label>
+                            <select id="user-comuna" disabled>
+                                <option value="">-- Seleccione Comuna --</option>
+                            </select>
+                            <span class="error-msg" id="err-user-comuna"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-address">Dirección*</label>
+                        <input type="text" id="user-address" maxlength="300">
+                        <span class="error-msg" id="err-user-address"></span>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="switchView('view-users')">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- 4. Mantenedor de Productos: Listado -->
+            <section id="view-products" class="admin-section hidden">
+                <div class="section-header">
+                    <h2>Listado de Productos</h2>
+                    <button class="btn btn-primary role-admin" onclick="openProductForm()">+ NUEVO PRODUCTO</button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Estado Stock</th>
+                            <th class="role-admin">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-table-body">
+                        <!-- Carga dinámica JS -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 5. Formulario Crear/Editar Producto -->
+            <section id="view-product-form" class="admin-section hidden">
+                <h2 id="product-form-title">NUEVO PRODUCTO</h2>
+                <form id="form-product" class="admin-form" novalidate>
+                    <input type="hidden" id="product-id">
+
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="prod-code">Código Producto (Mínimo 3 caracteres)*</label>
+                            <input type="text" id="prod-code">
+                            <span class="error-msg" id="err-prod-code"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="prod-name">Nombre Producto*</label>
+                            <input type="text" id="prod-name" maxlength="100">
+                            <span class="error-msg" id="err-prod-name"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prod-desc">Descripción (Opcional)</label>
+                        <textarea id="prod-desc" rows="3" maxlength="500"></textarea>
+                        <span class="error-msg" id="err-prod-desc"></span>
+                    </div>
+
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="prod-price">Precio ($)*</label>
+                            <input type="number" id="prod-price" step="0.01" min="0">
+                            <span class="error-msg" id="err-prod-price"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="prod-stock">Stock*</label>
+                            <input type="number" id="prod-stock" min="0" step="1">
+                            <span class="error-msg" id="err-prod-stock"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="prod-critical-stock">Stock Crítico (Opcional)</label>
+                            <input type="number" id="prod-critical-stock" min="0" step="1">
+                            <span class="error-msg" id="err-prod-critical-stock"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="prod-category">Categoría*</label>
+                            <select id="prod-category">
+                                <option value="">-- Seleccionar --</option>
+                                <option value="Alimento">Alimento</option>
+                                <option value="Juguetes">Juguetes</option>
+                                <option value="Accesorios">Accesorios</option>
+                                <option value="Farmacia">Farmacia</option>
+                            </select>
+                            <span class="error-msg" id="err-prod-category"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="prod-image">URL de Imagen (Opcional)</label>
+                            <input type="text" id="prod-image" placeholder="assets/img/producto.jpg">
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="switchView('view-products')">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar Producto</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
