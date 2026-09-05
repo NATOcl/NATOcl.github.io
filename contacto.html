@@ -31,14 +31,18 @@
                 </svg>
             </button>
         </form>
+
         <!--bOTON DE CARRITO-->
+
         <a href="carrito.html " class="size-9.5 relative flex justify-center items-center rounded-xl bg-gray-100 border border-gray-200 text-gray-800 hover:bg-gray-200 focus:outline-none">
             <span class="sr-only">Carrito</span>
             <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
                 <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
             </svg>
         </a>
+
         <!-- boton inciar sesion -->
+
         <a href="login.html" class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl bg-teal-700 text-white hover:bg-teal-800 focus:outline-none transition">
             Iniciar sesión
         </a>
@@ -50,6 +54,7 @@
             </button>
         </div>
         </div>
+
         <!-- End Button Group -->
 
         <!-- Collapse -->
@@ -77,7 +82,7 @@
     </header>
 
 
-    <!-- CONTENIDO CONTACTO -->
+<!-- CONTENIDO CONTACTO -->
     <main class="py-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -88,45 +93,44 @@
             <!-- FORMULARIO -->
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
 
-                <form class="space-y-6">
+                <!-- Alerta de éxito -->
+                <div id="mensajeExito" class="hidden mb-6 p-4 rounded-xl bg-teal-50 border border-teal-200 text-teal-800 text-sm font-medium">
+                    ¡Mensaje guardado con éxito! Nos pondremos en contacto pronto.
+                </div>
+
+                <form id="contactoForm" class="space-y-6" novalidate>
+                    <!-- Campo Nombre -->
                     <div>
-
-                        <label for="nombre"class="block text-sm font-medium text-gray-700 mb-2"> Nombre
-                        </label>
-
-                        <input type="text" id="nombre" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none" placeholder="Ingresa tu nombre">
+                        <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2"> Nombre </label>
+                        <input type="text" id="nombre" maxlength="100" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-700" placeholder="Ingresa tu nombre">
+                        <p id="errorNombre" class="hidden mt-1 text-xs text-red-600 font-medium"></p>
                     </div>
 
+                    <!-- Campo Correo -->
                     <div>
-
                         <label for="correo" class="block text-sm font-medium text-gray-700 mb-2"> Correo electrónico </label>
-
-                        <input type="email" id="correo" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none" placeholder="ejemplo@correo.com">
-
+                        <input type="email" id="correo" maxlength="100" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-700" placeholder="ejemplo@duoc.cl">
+                        <p id="errorCorreo" class="hidden mt-1 text-xs text-red-600 font-medium"></p>
                     </div>
 
+                    <!-- Campo Teléfono (Opcional) -->
                     <div>
-                        <label for="numero" class="block text-sm font-medium text-gray-700 mb-2"> Número </label>
-                        <input type="tel" id="numero" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none"  placeholder="+56 9 1234 5678" >
+                        <label for="numero" class="block text-sm font-medium text-gray-700 mb-2"> Número <span class="text-gray-400 font-normal">(opcional)</span></label>
+                        <input type="tel" id="numero" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-700" placeholder="+56 9 1234 5678">
                     </div>
 
-
+                    <!-- Campo Mensaje / Comentario -->
                     <div>
-
-                        <label  for="mensaje" class="block text-sm font-medium text-gray-700 mb-2"> Mensaje </label>
-
-                        <textarea  id="mensaje" rows="5" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none" placeholder="Escribe tu mensaje" ></textarea>
+                        <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-2"> Mensaje </label>
+                        <textarea id="mensaje" rows="5" maxlength="500" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-700" placeholder="Escribe tu mensaje"></textarea>
+                        <p id="errorMensaje" class="hidden mt-1 text-xs text-red-600 font-medium"></p>
                     </div>
 
-                    <button type="submit" class="w-full py-3 rounded-xl bg-teal-700 text-white font-medium hover:bg-teal-800 transition" > Enviar mensaje
-                    </button>
-
+                    <button type="submit" class="w-full py-3 rounded-xl bg-teal-700 text-white font-medium hover:bg-teal-800 transition"> Enviar mensaje </button>
                 </form>
 
             </div>
-
         </div>
-
     </main>
 
      <footer class="bg-[#19241c] text-gray-400 text-sm">
@@ -210,6 +214,6 @@
                 </div>
              </div>
      </footer>
-
+     <script src="./assest/js/contacto.js"></script>
 </body>
 </html>
