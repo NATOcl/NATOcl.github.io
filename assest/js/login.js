@@ -1,3 +1,4 @@
+// --- generado con ayuda de gemeni ia ---
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');
   const inputCorreo = document.getElementById('correo');

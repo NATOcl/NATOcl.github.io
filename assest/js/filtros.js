@@ -1,3 +1,4 @@
+// --- generado con ayuda de gemeni ia ---
 document.addEventListener("DOMContentLoaded", () => {
   const btnServicios = document.getElementById("btn-servicios");
   const btnMedicamentos = document.getElementById("btn-medicamentos");

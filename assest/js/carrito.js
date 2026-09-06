@@ -1,3 +1,4 @@
+// --- generado con ayuda de gemeni ia ---
 document.addEventListener("DOMContentLoaded", () => {
   const contenedorCarrito = document.getElementById("contenedor-carrito");
   const subtotalElemento = document.getElementById("subtotal-precio");

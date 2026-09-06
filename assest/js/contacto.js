@@ -1,3 +1,4 @@
+// --- generado con ayuda de gemeni ia ---
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contactoForm');
     const mensajeExito = document.getElementById('mensajeExito');

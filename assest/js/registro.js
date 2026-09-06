@@ -1,5 +1,5 @@
 
-// CODIGO CREADO CON IA
+// CODIGO CREADO CON IA GEMENI
 document.addEventListener('DOMContentLoaded', () => {
   const registroForm = document.getElementById('registroForm');
   
