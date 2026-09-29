@@ -1,8 +1,8 @@
 # NATOcl.github.io
 
-> Evaluación 01 – Troncoso / Obreque
+> Evaluación 01-02-03 – Troncoso / Obreque / Abarca
 
-Sitio web de e-commerce desarrollado como proyecto académico, publicado con **GitHub Pages**. Actualmente está construido con HTML, CSS y JavaScript, y se encuentra en **proceso de migración a React**.
+Sitio web de e-commerce.
 
 **Demo:** https://natocl.github.io
 
