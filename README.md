@@ -1,16 +1,72 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#  PetCare
+ 
+Sitio web frontend para una veterinaria. Permite explorar un catálogo de **servicios**, **medicamentos y vacunas**, agregar productos a un **carrito**, e incluye páginas de **login**, **registro** y **contacto**.
+ 
+> Proyecto de la *Evaluación 01* — desarrollado con HTML, Tailwind CSS y JavaScript vanilla, sin frameworks.
+ 
+<!-- TODO: agrega aquí el nombre del ramo / sección / docente si corresponde -->
+ 
+##  Demo
+ 
+<!-- TODO: verifica que esta URL sea la correcta -->
+https://natocl.github.io/
+ 
+##  Funcionalidades
+ 
+- **Catálogo con pestañas:** "Servicios" y "Medicamentos y Vacunas".
+- **Filtros por categoría** mediante botones.
+- **Buscador** de productos y servicios.
+- **Carrito de compras** para agregar y revisar productos.
+- **Login y registro** de usuarios con sus propias validaciones en JavaScript.
+- **Formulario de contacto.**
+##  Tecnologías
+ 
+| Tecnología | Uso |
+|---|---|
+| HTML5 | Estructura de las páginas |
+| Tailwind CSS | Estilos mediante clases utilitarias |
+| JavaScript (vanilla) | Filtros, buscador, carrito y validaciones |
+| GitHub Pages | Publicación del sitio |
+ 
+##  Estructura del proyecto
+ 
+```
+NATOcl.github.io/
+├── index.html
+├── productos.html      # Catálogo (servicios, medicamentos y vacunas)
+├── carrito.html        # Carrito de compras
+├── login.html          # Inicio de sesión
+├── registro.html       # Registro de usuarios
+└── assest/
+    └── js/
+        ├── filtros.js    # Filtros por categoría y buscador
+        ├── carrito.js
+        ├── login.js
+        ├── registro.js
+        └── contacto.js
+```
+ 
+<!-- TODO: revisa que los nombres coincidan con el repositorio (incluyendo la carpeta "assest" tal como está escrita) y agrega css/ e imágenes si corresponde -->
+ 
+##  Cómo ejecutarlo
+ 
+1. Clona el repositorio:
+```bash
+   git clone https://github.com/NATOcl/NATOcl.github.io.git
+```
+2. Entra a la carpeta:
+```bash
+   cd NATOcl.github.io
+```
+3. Abre `index.html` en el navegador, o usa la extensión **Live Server** de VS Code para verlo con recarga automática.
+No requiere instalar dependencias ni compilar nada.
+ 
+##  Autores
+ 
+<!-- TODO: confirma los nombres completos y agrega los enlaces a sus perfiles -->
+- Troncoso
+- Obreque
+## 📄 Licencia
+ 
+<!-- TODO: define una licencia o borra esta sección -->
+Proyecto con fines académicos.
