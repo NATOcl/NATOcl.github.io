@@ -66,7 +66,8 @@ No requiere instalar dependencias ni compilar nada.
 <!-- TODO: confirma los nombres completos y agrega los enlaces a sus perfiles -->
 - Troncoso
 - Obreque
-## 📄 Licencia
+- Abarca
+##  Licencia
  
 <!-- TODO: define una licencia o borra esta sección -->
 Proyecto con fines académicos.
