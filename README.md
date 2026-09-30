@@ -61,12 +61,11 @@ NATOcl.github.io/
 3. Abre `index.html` en el navegador, o usa la extensión **Live Server** de VS Code para verlo con recarga automática.
 No requiere instalar dependencias ni compilar nada.
  
-##  Autores
- 
-<!-- TODO: confirma los nombres completos y agrega los enlaces a sus perfiles -->
-- Troncoso
-- Obreque
-- Abarca
+## Equipo
+- **Troncoso** - @NATOcl
+- **Obreque** - @daniobreq
+- **Abarca** - @AntoAbarca
+- 
 ##  Licencia
  
 <!-- TODO: define una licencia o borra esta sección -->
