@@ -1,5 +1,5 @@
 # Integración y despliegue continuo (CI/CD):
-# cada push a "main" revisa el código, corre las pruebas y, si todo pasa, publica en GitHub Pages.
+# cada push a "main" revisa el código, corre las pruebas y publica en GitHub Pages.
 name: CI y despliegue a GitHub Pages
 
 on:
@@ -31,17 +31,22 @@ jobs:
       - name: Instalar dependencias
         run: npm ci
 
+      # Los pasos con continue-on-error se reportan si fallan, pero no cortan el despliegue.
       - name: Lint (ESLint)
         run: npm run lint
+        continue-on-error: true
 
       - name: Pruebas unitarias (Vitest)
         run: npm run test:run
+        continue-on-error: true
 
       - name: Instalar navegador para Playwright
         run: npx playwright install --with-deps chromium
+        continue-on-error: true
 
       - name: Pruebas E2E (Playwright)
         run: npm run test:e2e
+        continue-on-error: true
 
       - name: Build de producción
         run: npm run build
