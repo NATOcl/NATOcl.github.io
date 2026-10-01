@@ -1,20 +1,9 @@
 // main.jsx
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Root } from './Root';
-import { HomePage } from './pages/HomePage';
-import { UserProfile } from './pages/UserProfile';
- 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />,
-    children: [
-      { index: true, element: <HomePage /> },
-      { path: 'users/:userId', element: <UserProfile /> },
-    ],
-  },
-]);
- 
+import {createRoot } from 'react-dom/client'
+import Footer from './components/Footer.jsx'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './index.css'
+
 createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
-);
+    <Footer />
+)
