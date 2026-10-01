@@ -1,6 +1,6 @@
 #  PetCare
  
-Sitio web frontend para una veterinaria. Permite explorar un catálogo de **servicios**, **medicamentos y vacunas**, agregar productos a un **carrito**, e incluye páginas de **login**, **registro** y **contacto**.
+Sitio web
  
 > Proyecto de la *Evaluación 01* — desarrollado con HTML, Tailwind CSS y JavaScript vanilla, sin frameworks.
  
