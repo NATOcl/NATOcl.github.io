@@ -4,10 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "test:unit": "jasmine",
+  "test:e2e": "playwright test",
+  "test:e2e:ui": "playwright test --ui",
+  "test": "jasmine && playwright test"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
@@ -17,6 +21,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.63.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
@@ -24,6 +29,20 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.6",
     "globals": "^17.12.0",
+    "jasmine": "^7.0.0",
     "vite": "^8.3.0"
-  }
+  },
+  "description": "Sitio web frontend para una veterinaria. Permite explorar un catálogo de **servicios**, **medicamentos y vacunas**, agregar productos a un **carrito**, e incluye páginas de **login**, **registro** y **contacto**.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NATOcl/NATOcl.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NATOcl/NATOcl.github.io/issues"
+  },
+  "homepage": "https://github.com/NATOcl/NATOcl.github.io#readme"
 }
