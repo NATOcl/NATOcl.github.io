@@ -51,6 +51,11 @@ jobs:
       - name: Build de producción
         run: npm run build
 
+      # GitHub Pages no conoce las rutas de React Router (ej. /nosotros).
+      # Al copiar index.html como 404.html, la app carga igual y el router resuelve la ruta.
+      - name: Copiar index.html como 404.html (rutas de React Router)
+        run: cp dist/index.html dist/404.html
+
       - name: Subir carpeta dist como artefacto de Pages
         if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v4
