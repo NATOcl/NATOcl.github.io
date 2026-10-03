@@ -3,6 +3,16 @@ import  corazonIcon from '../assets/Corazon.svg'
 import  estrellaIcon from '../assets/Estrella.svg'
 import  escudoIcon from '../assets/Escudo.svg'
 
+import  hombreImg from '../assets/vetmasculino.jpg'
+import  mujerImg from '../assets/vetfem.jpg'
+import  jovenImg from '../assets/vetjoven.jpg'
+
+const TEAM = [
+    {name: 'Dr. Emilio Sapiain', role: 'Director Medico · Medicina Interna', photo: hombreImg},
+    {name: 'Dra. Paola Rios', role: 'Odontologia y Dermatalogia', photo: mujerImg},
+    {name: 'Dr. Luis Mora', role: 'Cirugía Veterinaria', photo: jovenImg},
+]
+
 const VALUES  = [
     {
         title: 'Compasión',
@@ -86,6 +96,31 @@ export function Nosotros(){
                 </div>
             </div>
         </section>
+
+            <section className="equipo py-5">
+                <div className="container py-lg-4">
+                    <h2 className="equipo-title text-center fw-bold mb-5"> Nuestro equipo</h2>
+                    <div className="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                        {TEAM.map(({name,role,photo}) => (
+                            <div className="col" key={name}>
+                                <article className="equipo-card card h-100 text-center">
+                                    <div className="card-body p-4">
+                                        <img src={photo}
+                                             alt={name}
+                                            className="equipo-foto rounded-circle mb-3"
+                                        />
+                                        <h3 className="equipo-name h6 fw-bold mb-1">{name}</h3>
+                                        <p className="equipo-role mb-0">{role}</p>
+                                    </div>
+
+                                </article>
+
+                            </div>
+                            ))}
+                    </div>
+                </div>
+
+            </section>
 
         </>
     )

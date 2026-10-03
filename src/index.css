@@ -86,3 +86,30 @@
     color: #4a5d6b;
     line-height: 1.7;
 }
+.equipo {
+    background-color: #e8f4f6;
+    font-family: 'Nunito', system-ui, sans-serif;
+}
+.equipo-title {
+    font-family: 'Lora', Georgia, serif;
+    color: #0f2a3a;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+.equipo-card {
+    border: 1px solid #c5dde8;
+    border-radius: 1.5rem;
+}
+.equipo-foto {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.equipo-name {
+    font-family: 'Lora', Georgia, serif;
+    color: #0f2a3a;
+    font-size: 1.05rem;
+}
+.equipo-role {
+    color: #4a5d6b;
+    font-size: 0.9rem;
+}
