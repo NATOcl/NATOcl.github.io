@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider  } from "react-router-dom";
 import { Root } from './Root.jsx'
 import { Home } from './pages/Home'
 import { Nosotros } from "./pages/Nosotros";
+import { Contacto} from "./pages/Contacto.jsx";
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
         children: [
             {index: true,element: <Home/>},
             {path: 'nosotros',element: <Nosotros/>},
+            {path: 'contacto', element: <Contacto/>},
             {path: 'users/:userId',element: <UserProfile />},
         ],
     },

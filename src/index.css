@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,500;1,600&family=Nunito:wght@400;600;700&display=swap');
-.bg-soft-blue { background-color: #dbe9fa }
-.nosotros-hero {
-    background-color: #e8f4f6;
-    font-family: 'Nunito', system-ui, sans-serif;
-}
+
+.bg-soft-blue { background-color: #dbe9fa; }
+
+/* ---------- Compartidos ---------- */
 .nosotros-badge {
     background-color: #d4e9f2;
     color: #1a7a8a;
@@ -11,6 +10,25 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     padding: 0.55rem 1rem;
+}
+.btn-teal,
+.btm-teal {
+    background-color: #1a7a8a;
+    border-color: #1a7a8a;
+    color: #fff;
+    font-weight: 700;
+}
+.btn-teal:hover,
+.btm-teal:hover {
+    background-color: #13606d;
+    border-color: #13606d;
+    color: #fff;
+}
+
+/* ---------- Nosotros: hero ---------- */
+.nosotros-hero {
+    background-color: #e8f4f6;
+    font-family: 'Nunito', system-ui, sans-serif;
 }
 .nosotros-title {
     font-family: 'Lora', Georgia, serif;
@@ -27,27 +45,13 @@
     font-size: 1.05rem;
     line-height: 1.8;
 }
-.btn-teal {
-    background-color: #1a7a8a;
-    border-color: #1a7a8a;
-    color: #fff;
-    font-weight: 700;
-}
-.btn-teal:hover {
-    background-color: #13606d;
-    border-color: #13606d;
-    color: #fff;
-}
 .nosotros-img {
     aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 2rem;
 }
-.valor-icon img {
-    width: 24px;
-    height: 24px;
-    filter: brightness(0) invert(1);
-}
+
+/* ---------- Nosotros: valores ---------- */
 .valores {
     background-color: #f2f8fb;
     font-family: 'Nunito', system-ui, sans-serif;
@@ -77,6 +81,7 @@
 .valor-icon img {
     width: 24px;
     height: 24px;
+    filter: brightness(0) invert(1);
 }
 .valor-name {
     font-family: 'Lora', Georgia, serif;
@@ -86,6 +91,8 @@
     color: #4a5d6b;
     line-height: 1.7;
 }
+
+/* ---------- Nosotros: equipo ---------- */
 .equipo {
     background-color: #e8f4f6;
     font-family: 'Nunito', system-ui, sans-serif;
@@ -112,4 +119,85 @@
 .equipo-role {
     color: #4a5d6b;
     font-size: 0.9rem;
+}
+
+/* ---------- Contacto (nombres iguales a Contacto.jsx) ---------- */
+.contacto {
+    background-color: #f2f8fb;
+    font-family: 'Nunito', system-ui, sans-serif;
+}
+.contacto-title {
+    font-family: 'Lora', Georgia, serif;
+    color: #0f2a3a;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+}
+.contato-lead {
+    color: #4a5d6b;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+.contactoIcon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background-color: #1a7a8a;
+}
+.contactoIcon img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+}
+.contacto-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #4a5d6b;
+}
+.contato-value {
+    color: #0f2a3a;
+    font-weight: 600;
+}
+.horarios {
+    background-color: #e8f4f6;
+}
+.horarios-title {
+    font-family: 'Lora', Georgia, serif;
+    color: #0f2a3a;
+    font-size: 1.05rem;
+}
+.horario-dia {
+    color: #4a5d6b;
+}
+.horario-hora {
+    font-weight: 700;
+    color: #0f2a3a;
+}
+.horario-urgencia {
+    font-weight: 700;
+    color: #3b8fc7;
+}
+.contacto-from-card {
+    background-color: #fff;
+    border: 1px solid #c5dde8;
+    border-radius: 1.75rem;
+}
+.contacto-from-title {
+    font-family: 'Lora', Georgia, serif;
+    color: #0f2a3a;
+    font-size: 1.4rem;
+}
+.contacto-form .form-control {
+    background-color: #f2f8fb;
+    border: 1px solid #c5dde8;
+    border-radius: 0.9rem;
+    padding: 0.75rem 1rem;
+}
+.contacto-form .form-control:focus {
+    border-color: #1a7a8a;
+    box-shadow: 0 0 0 0.2rem rgba(26, 122, 138, 0.2);
 }
