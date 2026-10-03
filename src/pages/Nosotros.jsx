@@ -8,7 +8,7 @@ import  mujerImg from '../assets/vetfem.jpg'
 import  jovenImg from '../assets/vetjoven.jpg'
 
 const TEAM = [
-    {name: 'Dr. Emilio Sapiain', role: 'Director Medico · Medicina Interna', photo: hombreImg},
+    {name: 'Dr. Marcos Von Bischoffshausen', role: 'Director Medico · Medicina Interna', photo: hombreImg},
     {name: 'Dra. Paola Rios', role: 'Odontologia y Dermatalogia', photo: mujerImg},
     {name: 'Dr. Luis Mora', role: 'Cirugía Veterinaria', photo: jovenImg},
 ]
