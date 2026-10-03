@@ -41,7 +41,7 @@ export function Nosotros(){
             <div className="container py-lg-5">
                 <div className="row align-items-center g-5">
                     <div className="col-lg-6">
-                        <span className="badge rounded-pill nosotros-badge text-uppercase md-3">
+                        <span className="badge rounded-pill nosotros-badge text-uppercase mb-3">
                             Quienes somos
                         </span>
 
