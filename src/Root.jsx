@@ -1,5 +1,6 @@
 // Root.jsx
 import { Outlet, NavLink } from 'react-router-dom';
+import Footer from "./components/Footer.jsx";
  
 export function Root() {
   return (
@@ -15,7 +16,7 @@ export function Root() {
         <Outlet />
       </main>
  
-      <footer>© 2026</footer>
+      <Footer />
     </div>
   );
 }
