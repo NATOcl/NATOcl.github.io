@@ -1,5 +1,5 @@
 // src/pages/Login.jsx
-export default function Login() {
+export function Login() {
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">

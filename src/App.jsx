@@ -3,6 +3,7 @@
 //
 //
 import { HashRouter, Routes, Route, Link } from 'react-router-dom'
+import { Login } from './pages/Login'
 
 function Home() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/acerca" element={<Acerca />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </HashRouter>
