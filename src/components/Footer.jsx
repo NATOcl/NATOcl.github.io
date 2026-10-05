@@ -1,54 +1,111 @@
+import { Link } from 'react-router-dom'
+import logoIcon from '../assets/favicon.svg'
+
 const COLUMNS= [
-    {title: 'Tienda',links: ['Servicios','Medicamentos','Vacunas','Carrito']},
-    {title: 'Veterinaria',links: ['Nosotros','Blog','Contacto']},
-    {title: 'Tu cuenta',links: ['Ingresar','Registrarse']}
+    {
+        title: 'Tienda',
+        links: [
+            {label: 'Servicios'},
+            {label: 'Medicamentos'},
+            {label: 'Vacunas'},
+            {label: 'Carrito'},
+        ],
+    },
+    {
+        title: 'Veterinaria',
+        links: [
+            {label: 'Nosotros', to: '/nosotros'},
+            {label: 'Blog'},
+            {label: 'Contacto', to: '/contacto'}
+        ],
+
+    },
+    {
+        title: 'Cuenta',
+        links: [
+            {label: 'Ingresar', to: '/login'},
+            {label: 'Registrar'},
+            {label: 'Contacto'}
+        ]
+
+    },
+
 ]
 
 export default function Footer(){
-    return(
-        <footer className="bg-soft-blue border-top mt-5">
-            <div className="container py-5">
+    return (
+        <footer className="footer-dark">
+            <div className="container py-4">
                 <div className="row g-4">
-                    <div className="col-12 col-lg-4">
-                        <p className="fs-5 mb-2"> Veterinaria <strong>PetCare</strong></p>
-                        <p className="text-secondary mb-0">
-                            Atención veterinaria profesional, contamos por servicios de emergencias 24/7
+
+                    <div className="col-12 col-lg-5">
+                        <Link to="/" className="footer-brand d-inline-flex align-items-center gap-2 mb-3">
+                            <span className="footer-brand-mark">
+                                <img src={logoIcon}
+                                     alt="icon perritogato"
+                                />
+                            </span>
+                        </Link>
+
+                        <p className="footer-text mb-4">
+                            Atención veterinaria profesional con servicio de urgencias 24/7 para perros y gatos.
+                        </p>
+
+                        <p className="footer-phone mb-2">
+                            <a href="tel:+56 9 12345678" className="footer-contact-link">
+                                +56 9 12345678
+                            </a>
+                        </p>
+                        <p className="footer-small mb-1">
+                            <a href="https://www.google.com/maps/place/Duoc+UC:+Sede+San+Joaqu%C3%ADn/@-33.500552,-70.6196477,17z"
+                            target="_blank"
+                               rel="noopener noreferrer"
+                               className="footer-contact-link"
+                            >
+                                Av. Vicuña Mackenna 4917, San Joaquin
+                            </a>
+                        </p>
+                        <p className="footer-small mb-3">
+                            <a href="mailto:contacto@petcare.cl" className="footer-contact-link">
+                                contacto@petcare.cl
+                            </a>
+                        </p>
+                        <p className="footer-hours mb-0">
+                            Lun-Vie 8:00-20:00 · Sáb-Dom 9:00-15:00 · Urgencias 24/7
                         </p>
                     </div>
 
-                    {COLUMNS.map((col) => (
-                        <nav className="col-6 col-md-3 col-lg-2" key={col.title} aria-label={col.title}>
-                            <h3 className="h6 fw-bold mb-3">{col.title}</h3>
-                            <ul className="list-unstyled mb-0">
-                                {col.links.map((label) => (
-                                    <li className="mb-2" key={label}>
-                                        <a href="#" className="link-secondary link-underline-opacity-0 link-underline-opacity-100-hover">
-                                            {label}
-                                        </a>
-                                    </li>
-                                    ))}
-                            </ul>
-                        </nav>
-                    ))}
-
-                    <div className="col-6 col-md-3 col-lg-2">
-                        <h3 className="h6 fw-bold mb-3">Contacto</h3>
-                        <ul className="list-unstyled text-secondary mb-0">
-                            <li className="mb-2">Av.falsa 123</li>
-                            <li className="mb-2">+56 9 12345678</li>
-                            <li className="mb-2">contacto@proton.xd</li>
+                    {COLUMNS.map((col,i) => (
+                    <nav
+                        className={`col-6 col-md-4 col-lg-2 ${i === 0 ? 'offset-lg-1' : ''}`}
+                        key={col.title}
+                        aria-label={col.title}
+                        >
+                        <h3 className="footer-title mb-3">
+                            {col.title}
+                        </h3>
+                        <ul className="list-unstyled mb-0">
+                            {col.links.map(({label,to}) => (
+                                <li className="mb-2" key={label}>
+                                    {to ? (
+                                        <Link to={to} className="footer-link">{label}</Link>
+                                    ) : (
+                                        <a href="#" className="footer-link">{label}</a>
+                                    )}
+                                </li>
+                                ))}
                         </ul>
-                    </div>
+                    </nav>
+                    ))}
                 </div>
             </div>
 
-            <div className="border-top">
-                <div className="container py-3 d-flex flex-wrap justify-content-between gap-2 small text-secondary">
-                    <span>© 2026 todos los derechos reservados</span>
-                    <span> Evaluacion Obreque/Abarca/Troncoso </span>
+            <div className="footer-bottom">
+                <div className="container py-3 d-flex flex-wrap justify-content-between gap-2 small">
+                    <span>© 2026 Petcare · Todos los derechos reservados</span>
+                    <span> Evaluacion 2 Abarca/Troncoso/Obreque </span>
                 </div>
             </div>
         </footer>
-
     )
 }
