@@ -24,8 +24,7 @@ const COLUMNS= [
         title: 'Cuenta',
         links: [
             {label: 'Ingresar', to: '/login'},
-            {label: 'Registrar'},
-            {label: 'Contacto'}
+            {label: 'Registrar'}
         ]
 
     },
@@ -42,9 +41,10 @@ export default function Footer(){
                         <Link to="/" className="footer-brand d-inline-flex align-items-center gap-2 mb-3">
                             <span className="footer-brand-mark">
                                 <img src={logoIcon}
-                                     alt="icon perritogato"
+                                     alt="iconPetcare"
                                 />
                             </span>
+                            <span className="footer-brand-name">Petcare</span>
                         </Link>
 
                         <p className="footer-text mb-4">
@@ -52,11 +52,13 @@ export default function Footer(){
                         </p>
 
                         <p className="footer-phone mb-2">
-                            <a href="tel:+56 9 12345678" className="footer-contact-link">
+                            <span className="footer-phone-label">Contacto: </span>
+                            <a href="tel:+56912345678" className="footer-contact-link">
                                 +56 9 12345678
                             </a>
                         </p>
                         <p className="footer-small mb-1">
+                            <span className="footer-phone-label">Ubicación: </span>
                             <a href="https://www.google.com/maps/place/Duoc+UC:+Sede+San+Joaqu%C3%ADn/@-33.500552,-70.6196477,17z"
                             target="_blank"
                                rel="noopener noreferrer"
@@ -66,11 +68,13 @@ export default function Footer(){
                             </a>
                         </p>
                         <p className="footer-small mb-3">
+                            <span className="footer-phone-label">Mail: </span>
                             <a href="mailto:contacto@petcare.cl" className="footer-contact-link">
                                 contacto@petcare.cl
                             </a>
                         </p>
                         <p className="footer-hours mb-0">
+                            <span className="footer-phone-label">Horarios: </span>
                             Lun-Vie 8:00-20:00 · Sáb-Dom 9:00-15:00 · Urgencias 24/7
                         </p>
                     </div>

@@ -25,7 +25,7 @@
     color: #fff;
 }
 
-/* ---------- Nosotros: hero ---------- */
+/* ---------- Nosotros ---------- */
 .nosotros-hero {
     background-color: #e8f4f6;
     font-family: 'Nunito', system-ui, sans-serif;
@@ -51,7 +51,7 @@
     border-radius: 2rem;
 }
 
-/* ---------- Nosotros: valores ---------- */
+/* ---------- Nosotros ---------- */
 .valores {
     background-color: #f2f8fb;
     font-family: 'Nunito', system-ui, sans-serif;
@@ -92,7 +92,7 @@
     line-height: 1.7;
 }
 
-/* ---------- Nosotros: equipo ---------- */
+/* ---------- Nosotros ---------- */
 .equipo {
     background-color: #e8f4f6;
     font-family: 'Nunito', system-ui, sans-serif;
@@ -121,7 +121,7 @@
     font-size: 0.9rem;
 }
 
-/* ---------- Contacto (nombres iguales a Contacto.jsx) ---------- */
+/* ---------- Contacto ---------- */
 .contacto {
     background-color: #f2f8fb;
     font-family: 'Nunito', system-ui, sans-serif;
@@ -235,9 +235,9 @@
     line-height: 1.6;
 }
 .footer-phone {
-    font-weight: 700;
-    font-size: 1rem;
-    color: #fff;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #e6f1f5;
 }
 .footer-small {
     font-size: 0.85rem;
@@ -274,4 +274,13 @@
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     color: #7f9fae;
     font-size: 0.8rem;
+}
+.footer-phone-label {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #b9d4de;
+    vertical-align: baseline;
+}
+.footer-hours .footer-phone-label {
+    font-size: 0.78rem;
 }
