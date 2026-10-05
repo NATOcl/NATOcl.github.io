@@ -7,6 +7,7 @@ import { Nosotros } from "./pages/Nosotros";
 import { Contacto} from "./pages/Contacto.jsx";
 import { Login} from "./pages/Login.jsx";
 import { Blogs } from "./pages/Blogs.jsx";
+import { Registro } from "./pages/Registro.jsx";
 
 
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
         children: [
             {index: true,element: <Home/>},
             {path: 'blogs', element: <Blogs/>},
+            {path: 'registro', element: <Registro/>},
             {path: 'nosotros',element: <Nosotros/>},
             {path: 'contacto', element: <Contacto/>},
             {path: 'login', element: <Login/>},
