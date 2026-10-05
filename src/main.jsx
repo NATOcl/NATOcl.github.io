@@ -6,6 +6,8 @@ import { Home } from './pages/Home'
 import { Nosotros } from "./pages/Nosotros";
 import { Contacto} from "./pages/Contacto.jsx";
 import { Login} from "./pages/Login.jsx";
+import { Blogs } from "./pages/Blogs.jsx";
+
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
@@ -17,6 +19,7 @@ const router = createBrowserRouter([
         element: <Root />,
         children: [
             {index: true,element: <Home/>},
+            {path: 'blogs', element: <Blogs/>},
             {path: 'nosotros',element: <Nosotros/>},
             {path: 'contacto', element: <Contacto/>},
             {path: 'login', element: <Login/>},
