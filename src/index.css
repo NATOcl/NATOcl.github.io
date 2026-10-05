@@ -275,3 +275,129 @@
     color: #7f9fae;
     font-size: 0.8rem;
 }
+
+/* ---------- Blogs ---------- */
+
+.blogs-seccion {
+  background-color: #eff3ea;
+  font-family: 'Nunito', system-ui, sans-serif;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  min-height: 100vh;
+}
+
+.blogs-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.blogs-main-title {
+  font-family: 'Lora', Georgia, serif;
+  color: #19241c;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3.75rem;
+  padding-top: 1.25rem;
+}
+
+.blogs-main-title span {
+  color: #598363;
+}
+
+.blogs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.blog-card {
+  background-color: #ffffff;
+  border: 1px solid #d2e2d6;
+  border-radius: 1.75rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(25, 36, 28, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .blog-card {
+    padding: 2.5rem;
+    flex-direction: row;
+  }
+}
+
+.blog-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.blog-badge {
+  display: inline-block;
+  background-color: #e1ebd9;
+  color: #486851;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+}
+
+.blog-title {
+  font-family: 'Lora', Georgia, serif;
+  color: #19241c;
+  font-size: clamp(1.8rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.blog-text {
+  color: #4a5d50;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.blog-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #486851;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 4px rgba(72, 104, 81, 0.15);
+  width: fit-content;
+}
+
+.blog-btn:hover {
+  background-color: #395340;
+  color: #ffffff;
+}
+
+.blog-img-wrapper {
+  flex: 1;
+  width: 100%;
+}
+
+.blog-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 24px rgba(25, 36, 28, 0.08);
+}
