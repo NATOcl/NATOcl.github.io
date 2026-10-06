@@ -1,21 +1,16 @@
 // Root.jsx
-import { Outlet, NavLink } from 'react-router-dom';
-import Footer from "./components/Footer.jsx";
- 
+import { Outlet } from 'react-router-dom';
+import { Navbar } from './components/Navbar.jsx';   
+import Footer from './components/Footer.jsx';   
+
 export function Root() {
   return (
     <div className="app">
-      <header>
-        <nav>
-          <NavLink to="/">Inicio</NavLink>
-          <NavLink to="/users/1">Perfil</NavLink>
-        </nav>
-      </header>
- 
+      <Navbar />      
       <main>
         <Outlet />
       </main>
- 
+
       <Footer />
     </div>
   );

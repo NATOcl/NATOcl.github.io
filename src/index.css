@@ -519,3 +519,279 @@
 .registro-button:hover {
     background-color: #13606d;
 }
+
+/* ---------- NavBar ---------- */
+
+.navbar-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #c5dde8;
+    box-shadow: 0 2px 12px rgba(15, 42, 58, 0.04);
+    font-family: 'Nunito', system-ui, sans-serif;
+    z-index: 50;
+}
+
+.vet-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    max-width: 50rem;       
+    margin: 0 auto;
+    padding: 0.75rem 1.25rem;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.navbar-logo img {
+    height: 3.25rem;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.navbar-logo:hover img {
+    transform: scale(1.05);
+}
+
+.navbar-collapse {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar-link {
+    position: relative;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0f2a3a;
+    text-decoration: none;
+    padding: 0.35rem 0;
+    transition: color 0.2s ease;
+}
+
+.navbar-link:hover {
+    color: #1a7a8a;
+}
+
+.navbar-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: #1a7a8a;
+    border-radius: 2px;
+    transition: width 0.25s ease;
+}
+
+.navbar-link:hover::after {
+    width: 100%;
+}
+
+.navbar-link.active {
+    color: #1a7a8a;
+    font-weight: 700;
+}
+
+.navbar-link.active::after {
+    width: 100%;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+}
+
+.navbar-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-search input {
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0 2rem 0 0.75rem;
+    font-size: 0.8rem;
+    background-color: #f2f8fb;
+    border: 1px solid #c5dde8;
+    border-radius: 0.75rem;
+    color: #0f2a3a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navbar-search input::placeholder {
+    color: #7f9fae;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.navbar-search input:hover,
+.navbar-search input:focus {
+    width: 12rem;
+    cursor: text;
+    background-color: #ffffff;
+    border-color: #1a7a8a;
+    box-shadow: 0 0 0 0.2rem rgba(26, 122, 138, 0.15);
+}
+
+.navbar-search input:hover::placeholder,
+.navbar-search input:focus::placeholder {
+    opacity: 1;
+}
+
+.navbar-search button {
+    position: absolute;
+    right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #4a5d6b;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.navbar-search button:hover,
+.navbar-search input:focus + button {
+    color: #1a7a8a;
+}
+
+.navbar-icon-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: #f2f8fb;
+    border: 1px solid #c5dde8;
+    border-radius: 0.75rem;
+    color: #0f2a3a;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.navbar-icon-btn:hover {
+    background-color: #e8f4f6;
+    border-color: #1a7a8a;
+    color: #1a7a8a;
+    transform: translateY(-1px);
+}
+
+/* --- Botón login --- */
+.navbar-login-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 0.75rem;
+    background-color: #1a7a8a;
+    color: #ffffff;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(26, 122, 138, 0.25);
+}
+
+.navbar-login-btn:hover {
+    background-color: #13606d;
+    box-shadow: 0 4px 12px rgba(26, 122, 138, 0.35);
+    transform: translateY(-1px);
+}
+
+/* --- Burger: oculto en escritorio --- */
+.navbar-burger {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+
+    .navbar-burger {
+        display: inline-flex;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        border-top: 1px solid #c5dde8;
+        border-bottom: 1px solid #c5dde8;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        justify-content: flex-start;
+    }
+
+    .navbar-collapse.is-open {
+        max-height: 30rem;
+        box-shadow: 0 8px 20px rgba(15, 42, 58, 0.08);
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .navbar-link {
+        display: block;
+        width: 100%;
+        padding: 0.85rem 0;
+        border-bottom: 1px solid #eef5f8;
+    }
+
+    .navbar-link::after {
+        display: none; 
+    }
+
+    .navbar-link.active {
+        padding-left: 0.75rem;
+        border-left: 3px solid #1a7a8a;
+    }
+}
+
+/* ---------- Pantalla movil pal navbar ---------- */
+
+@media (max-width: 640px) {
+    .navbar-nav {
+        padding: 0.6rem 1rem;
+    }
+
+    .navbar-logo img {
+        height: 2.75rem;
+    }
+
+    .navbar-search {
+        display: none; /* o muévelo dentro del collapse si prefieres */
+    }
+
+    .navbar-login-btn {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.8rem;
+    }
+}
