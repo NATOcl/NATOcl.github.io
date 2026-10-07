@@ -41,25 +41,36 @@ export function Contacto(){
 
     const handleChange = (e) => {
         const {name, value} = e.target
-        const nuevoForm = {...form, [name]: value}
-        const nuevosErrores = {...errors}
 
-        if (name === 'especie' && value !== 'Otro'){
-             nuevoForm.especieOtra = ''
-            delete nuevosErrores.especieOtra
-        }
-        if (errors[name]){
-            nuevosErrores[name] = VALIDADORES[name](value)
-        }
+        setForm(prev => {
+            const next = {...prev, [name]: value}
+            if (name === 'especie' && value !== 'Otro') next.especieOtra = ''
+            return next
+        })
 
-        setForm(nuevoForm)
-        setErrors(nuevosErrores)
+        setErrors(prev => {
+            const next = {...prev}
+
+            if (name === 'especie' && value !== 'Otro') delete next.especieOtra
+
+            const mensaje = VALIDADORES[name](value)
+            if (mensaje) next[name] = mensaje
+            else delete next[name]
+            return next
+        })
+
         setEnviado(false)
     }
 
     const handleBlur = (e) => {
         const {name, value} = e.target
-        setErrors({...errors,[name]: VALIDADORES[name](value) })
+        setErrors(prevState => {
+            const next = {...prevState}
+            const mensaje = VALIDADORES[name](value)
+            if (mensaje) next[name] = mensaje
+            else delete next[name]
+            return next
+        })
     }
 
     const handleSubmit = (e) => {
@@ -70,7 +81,9 @@ export function Contacto(){
         if (Object.keys(nuevosErrores).length === 0){
             const datos = {
                 ...form,
-                especie: form.especie === 'Otro' ? form.especieOtra.trim() : form.especie,
+                especie: form.especie === 'Otro'
+                    ? form.especieOtra.trim()
+                    : form.especie,
             }
             setEnviado(true)
             setForm(FORM_INCIAL)
@@ -214,7 +227,7 @@ export function Contacto(){
                                     </>
                                 )}
                             </div>
-                            
+
                             <div className="col-12">
                                 <label htmlFor="motivo" className="form-label fw-bold small">Motivo de consulta</label>
                                 <textarea

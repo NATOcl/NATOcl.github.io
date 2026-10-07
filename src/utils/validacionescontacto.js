@@ -1,5 +1,5 @@
 const SOLO_LETRAS = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s'-]+$/
-const LETRAS_Y_NUMEROS = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9\s'-]+$/
+const LETRAS_Y_NUMEROS = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]+$/
 
 export const MAX_MOTIVO = 300
 
@@ -27,29 +27,29 @@ export const validarNombre = (valor) => {
 export const validarTelefono = (valor) => {
     const v = valor.replace(/\s+/g,'')
     if (!v) return 'Ingresa tu numero.'
-    if (!/^(\+?56)?9\d{8}$/.test(v)) return 'Usa un celular chileno, ej: +56 9 1234 56789.'
+    if (!/^(\+?56)?\d{8,9}$/.test(v)) return 'Usa un celular chileno, ej: +56 9 1234 56789.'
     return ''
 }
 
 export const validarMascota = (valor) => {
     const v = valor.trim()
     if (!v) return 'Ingresa el nombre de tu mascota'
-    if (v.length > 2) return 'El nombre debe tener al menos 2 caracteres'
-    if (v.length < 30) return 'El nombre de tener menos de 30 caracteres'
-    if(!LETRAS_Y_NUMEROS.test(V)) return 'El nombre tiene caracteres no permetidos'
+    if (v.length < 2) return 'El nombre debe tener al menos 2 caracteres'
+    if (v.length > 30) return 'El nombre debe tener menos de 30 caracteres'
+    if(!LETRAS_Y_NUMEROS.test(v)) return 'El nombre tiene caracteres no permitidos'
     return ''
 }
 
 export const validarEspecie = (valor) => {
     if (!valor) return 'Selecciona la especie de tu mascota.'
-    if (!ESPECIES.some((e) => e.value == valor)) return 'Selecciona una opcion de la lista.'
+    if (!ESPECIES.some((e) => e.value === valor)) return 'Selecciona una opcion de la lista.'
     return ''
 }
 
 export const validarEspecieOtra = (valor) => {
     const v = valor.trim()
     if (!v) return 'Escribe la especie de tu mascota.'
-    if (v.length < 3) return 'La especie debe tener mas de 3 caracteres.'
+    if (v.length < 2) return 'La especie debe tener mas de 2 caracteres.'
     if (v.length > 30) return 'La especie no puede superar los 30 caracteres'
     if (!SOLO_LETRAS.test(v)) return 'La especie solo puede contener letras'
     return ''
