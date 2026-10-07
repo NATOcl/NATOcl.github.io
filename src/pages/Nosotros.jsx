@@ -7,6 +7,8 @@ import  hombreImg from '../assets/vetmasculino.jpg'
 import  mujerImg from '../assets/vetfem.jpg'
 import  jovenImg from '../assets/vetjoven.jpg'
 
+import { Link } from 'react-router-dom'
+
 const TEAM = [
     {name: 'Dr. Marcos Von Bischoffshausen', role: 'Director Medico · Medicina Interna', photo: hombreImg},
     {name: 'Dra. Paola Rios', role: 'Odontologia y Dermatalogia', photo: mujerImg},
@@ -57,9 +59,9 @@ export function Nosotros(){
                             Contamos con un equipo de 8 veterinarios especializados, tecnología de diagnóstico de última generación y un quirófano completamente equipado. 
                         </p>
 
-                        <a href="#" className="btn btn-teal btn-lg rounded-pill px-4 mt-3">
+                        <Link to="/contacto" className="btn btn-teal btn-lg rounded-pill px-4 mt-3">
                             Agendar consulta
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="col-lg-6">
