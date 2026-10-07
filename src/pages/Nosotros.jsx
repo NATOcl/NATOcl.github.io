@@ -16,19 +16,19 @@ const TEAM = [
 const VALUES  = [
     {
         title: 'Compasión',
-        text: 'loremdsad jkdasdkjs dkasjdka  jadska',
+        text: 'Tratamos a cada paciente como si fuera propio, con el cariño y respeto que merece. ',
         color: '#1a7a8a',
         icon: corazonIcon,
     },
     {
         title: 'Excelencia',
-        text: 'loremdsad jkdasdkjs dkasjdka  jadska',
+        text: 'Capacitación continua y tecnología de vanguardia para ofrecer el mejor diagnóstico y tratamiento. ',
         color: '#3b8fc7',
         icon: estrellaIcon,
     },
     {
         title: 'Confiaza',
-        text: 'loremdsad jkdasdkjs dkasjdka  jadska',
+        text: 'Comunicación honesta y transparente en cada paso del proceso de atención de tu mascota. ',
         color: '#0f5c6b',
         icon: escudoIcon,
     },
@@ -46,15 +46,15 @@ export function Nosotros(){
                         </span>
 
                         <h1 className="nosotros-title fw-bold mb-4">
-                            Fundada en 2012 dkjasdas olaaaaaaaaaaaaaaaa soy gay
+                            Medicina veterinaria con corazón 
                         </h1>
 
                         <p className="nosotros-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing eim.
+                            Fundada en 2012 por el Dr. Marcos Salas, PetCare nació con una misión clara: ofrecer atención veterinaria de alta calidad en un ambiente tranquilo y acogedor para las mascotas y sus familias. 
                         </p>
 
                         <p className="nosotros-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing eim.
+                            Contamos con un equipo de 8 veterinarios especializados, tecnología de diagnóstico de última generación y un quirófano completamente equipado. 
                         </p>
 
                         <a href="#" className="btn btn-teal btn-lg rounded-pill px-4 mt-3">
