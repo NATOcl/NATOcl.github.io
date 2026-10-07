@@ -19,12 +19,13 @@ https://natocl.github.io/
 - **Carrito de compras** para agregar y revisar productos.
 - **Login y registro** de usuarios con sus propias validaciones en JavaScript.
 - **Formulario de contacto.**
+- **Nosotros.** Donde el usuario puede enterarse del equipo que conforma la veterinaria
 ##  Tecnologías
  
 | Tecnología | Uso |
 |---|---|
 | HTML5 | Estructura de las páginas |
-| Tailwind CSS | Estilos mediante clases utilitarias |
+| Boostrap CSS | Estilos mediante clases utilitarias |
 | JavaScript (vanilla) | Filtros, buscador, carrito y validaciones |
 | GitHub Pages | Publicación del sitio |
  
@@ -32,22 +33,33 @@ https://natocl.github.io/
  
 ```
 NATOcl.github.io/
-├── index.html
-├── productos.html      # Catálogo (servicios, medicamentos y vacunas)
-├── carrito.html        # Carrito de compras
-├── login.html          # Inicio de sesión
-├── registro.html       # Registro de usuarios
-└── assest/
-    └── js/
-        ├── filtros.js    # Filtros por categoría y buscador
-        ├── carrito.js
-        ├── login.js
-        ├── registro.js
-        └── contacto.js
+├── index.html                  # Punto de entrada principal
+├── package.json                # Dependencias del proyecto
+├── vite.config.js              # Configuración de Vite
+├── public/                     # Archivos estáticos públicos
+└── src/                        # Código fuente principal
+    ├── assets/                 # Imágenes y SVGs
+    ├── components/             # Componentes reutilizables
+    │   ├── Footer.jsx
+    │   └── Navbar.jsx
+    ├── hooks/                  # Custom hooks de React
+    │   └── useUserProfile.js
+    ├── pages/                  # Vistas principales de la aplicación
+    │   ├── Blogs.jsx
+    │   ├── Contacto.jsx        #
+    │   ├── Home.jsx            # 
+    │   ├── Login.jsx           # 
+    │   ├── Nosotros.jsx        # 
+    │   ├── Registro.jsx        # 
+    │   └── UserProfile.jsx
+    ├── utils/                  # Funciones utilitarias y validaciones
+    │   └── validacionescontacto.js # lógica de contacto.js
+    ├── App.css                 # Estilos de la app
+    ├── App.jsx                 # Componente raíz
+    ├── index.css               # Estilos globales
+    ├── main.jsx                # Punto de montaje de React
+    └── Root.jsx                # Configuración de enrutamiento raíz
 ```
- 
-<!-- TODO: revisa que los nombres coincidan con el repositorio (incluyendo la carpeta "assest" tal como está escrita) y agrega css/ e imágenes si corresponde -->
- 
 ##  Cómo ejecutarlo
  
 1. Clona el repositorio:
