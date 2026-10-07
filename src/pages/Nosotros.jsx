@@ -1,4 +1,4 @@
-import Nosotrosimg from '../assets/nosotros.jpg'
+import nosotrosbombin from '../assets/nosotrosbombin.png'
 import  corazonIcon from '../assets/Corazon.svg'
 import  estrellaIcon from '../assets/Estrella.svg'
 import  escudoIcon from '../assets/Escudo.svg'
@@ -64,7 +64,7 @@ export function Nosotros(){
 
                     <div className="col-lg-6">
                         <img
-                            src={Nosotrosimg}
+                            src={nosotrosbombin}
                             alt="Instalaciones PetCare"
                             className="img-fluid w-100 nosotros-img"
                         />
