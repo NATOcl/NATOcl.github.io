@@ -2,7 +2,7 @@
  
 Sitio web
  
-> Proyecto de la *Evaluación 01* — desarrollado con HTML, Tailwind CSS y JavaScript vanilla, sin frameworks.
+> Proyecto de la *Evaluación 01* — 
  
 <!-- TODO: agrega aquí el nombre del ramo / sección / docente si corresponde -->
  
