@@ -8,7 +8,7 @@ import { Contacto} from "./pages/Contacto.jsx";
 import { Login} from "./pages/Login.jsx";
 import { Blogs } from "./pages/Blogs.jsx";
 import { Registro } from "./pages/Registro.jsx";
-
+import { Productos } from "./pages/Productos.jsx";
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
@@ -25,6 +25,7 @@ const router = createBrowserRouter([
             {path: 'nosotros',element: <Nosotros/>},
             {path: 'contacto', element: <Contacto/>},
             {path: 'login', element: <Login/>},
+            {path: 'productos', element: <Productos/>},
             {path: 'users/:userId',element: <UserProfile />},
         ],
     },

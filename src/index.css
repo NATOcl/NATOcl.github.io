@@ -790,7 +790,7 @@
     }
 
     .navbar-search {
-        display: none; /* o muévelo dentro del collapse si prefieres */
+        display: none; 
     }
 
     .navbar-login-btn {
@@ -887,4 +887,273 @@
 @keyframes modal-pop {
     from { opacity: 0; transform: scale(0.95) translateY(10px); }
     to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* --- Productos --- */
+
+.productos-main {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+    font-family: 'Nunito', system-ui, sans-serif;
+    color: #4a5d6b;
+}
+
+.productos-encabezado { margin-bottom: 2rem; }
+
+.productos-badge {
+    display: inline-block;
+    background-color: #d4e9f2;
+    color: #1a7a8a;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+}
+
+.productos-titulo {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #0f2a3a;
+    margin: 0 0 0.25rem;
+    line-height: 1.15;
+}
+
+.productos-subtitulo {
+    font-size: 0.85rem;
+    color: #7f9fae;
+    margin: 0;
+}
+
+.productos-controles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .productos-controles { flex-direction: row; align-items: center; }
+}
+
+.productos-tabs {
+    display: inline-flex;
+    background-color: rgba(229, 231, 235, 0.6);
+    padding: 0.25rem;
+    border-radius: 0.85rem;
+    align-self: flex-start;
+}
+
+.productos-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: none;
+    background: transparent;
+    border-radius: 0.7rem;
+    color: #4a5d6b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.productos-tab:hover:not(.is-active) { color: #0f2a3a; }
+
+.productos-tab.is-active {
+    background-color: #1a7a8a;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(26, 122, 138, 0.25);
+}
+
+.productos-tab-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 9999px;
+    background-color: #c5dde8;
+    color: #0f2a3a;
+}
+
+.productos-tab.is-active .productos-tab-badge {
+    background-color: rgba(15, 42, 58, 0.35);
+    color: #ffffff;
+}
+
+.productos-busqueda { position: relative; width: 100%; }
+@media (min-width: 768px) { .productos-busqueda { width: 18rem; } }
+
+.productos-busqueda input {
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.8rem;
+    color: #0f2a3a;
+    background-color: #ffffff;
+    border: 1px solid #c5dde8;
+    border-radius: 0.85rem;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.productos-busqueda input::placeholder { color: #7f9fae; }
+.productos-busqueda input:focus {
+    border-color: #1a7a8a;
+    box-shadow: 0 0 0 0.2rem rgba(26, 122, 138, 0.2);
+}
+
+.productos-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.productos-filtro {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    background-color: #ffffff;
+    border: 1px solid #c5dde8;
+    color: #4a5d6b;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.productos-filtro:hover:not(.is-active) {
+    background-color: #f2f8fb;
+    border-color: #1a7a8a;
+    color: #1a7a8a;
+}
+
+.productos-filtro.is-active {
+    background-color: #1a7a8a;
+    border-color: #1a7a8a;
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(26, 122, 138, 0.25);
+}
+
+.productos-tabla-wrap {
+    background-color: #ffffff;
+    border: 1px solid #c5dde8;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(15, 42, 58, 0.04);
+}
+
+.productos-tabla-scroll { overflow-x: auto; }
+
+.productos-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    color: #4a5d6b;
+}
+
+.productos-tabla thead {
+    background-color: #edf2ea;
+    color: #0f2a3a;
+    text-transform: uppercase;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid #c5dde8;
+}
+
+.productos-tabla th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.productos-tabla th.text-center { text-align: center; }
+
+.productos-tabla tbody tr {
+    border-bottom: 1px solid #eef5f8;
+    transition: background-color 0.15s ease;
+}
+
+.productos-tabla tbody tr:last-child { border-bottom: none; }
+.productos-tabla tbody tr:hover { background-color: #f7fbfc; }
+
+.productos-tabla td {
+    padding: 0.8rem 1rem;
+    vertical-align: middle;
+}
+
+.productos-tabla td.text-center { text-align: center; }
+
+.productos-codigo {
+    font-family: 'Courier New', monospace;
+    color: #7f9fae;
+    font-size: 0.78rem;
+}
+
+.productos-nombre {
+    font-weight: 700;
+    color: #0f2a3a;
+    font-size: 0.85rem;
+}
+
+.productos-precio {
+    font-weight: 700;
+    color: #c9821a;
+    font-size: 0.85rem;
+}
+
+.productos-pill {
+    display: inline-block;
+    background-color: #e8f4f6;
+    color: #1a7a8a;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+}
+
+.productos-btn-agregar {
+    padding: 0.35rem 0.85rem;
+    background-color: #1a7a8a;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s ease;
+}
+
+.productos-btn-agregar:hover {
+    background-color: #13606d;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(26, 122, 138, 0.25);
+}
+
+.productos-btn-agregar:active { transform: scale(0.96); }
+
+.productos-vacio {
+    text-align: center;
+    color: #7f9fae;
+    padding: 2rem 1rem !important;
+    font-style: italic;
+}
+
+@media (max-width: 640px) {
+    .productos-main { padding: 1.5rem 0.85rem; }
+    .productos-titulo { font-size: 1.6rem; }
+    .productos-tab { padding: 0.5rem 0.75rem; font-size: 0.7rem; }
+    .productos-tabla { font-size: 0.75rem; }
+    .productos-tabla th,
+    .productos-tabla td { padding: 0.6rem 0.7rem; }
 }
