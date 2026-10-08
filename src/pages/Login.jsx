@@ -1,4 +1,6 @@
 // src/pages/Login.jsx
+import { Link } from 'react-router-dom';
+
 export function Login() {
   return (
     <div className="container mt-5">
@@ -21,9 +23,17 @@ export function Login() {
                   <input type="password"id="password"className="form-control"placeholder="Ingresa tu contraseña"/>
                 </div>
 
-                <button type="submit" className="btn btn-primary w-100">Ingresar
+                <button type="submit" className="btn btn-teal w-100">Ingresar
                 </button>
               </form>
+
+              <p className="text-center mt-3 mb-0 small">
+                ¿No tienes cuenta?{' '}
+                <Link to="/Registro" className="text-decoration-none fw-bold text-teal-link">
+                  Regístrate aquí
+                </Link>
+              </p>
+
             </div>
           </div>
         </div>

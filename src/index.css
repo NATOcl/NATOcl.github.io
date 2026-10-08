@@ -12,11 +12,15 @@
     padding: 0.55rem 1rem;
 }
 .btn-teal,
-.btm-teal {
+.btn-teal {
     background-color: #1a7a8a;
     border-color: #1a7a8a;
-    color: #fff;
+    color: #ffffff;
     font-weight: 700;
+    border-radius: 0.75rem;
+    padding: 0.65rem 1rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(26, 122, 138, 0.25);
 }
 .btn-teal:hover,
 .btm-teal:hover {
@@ -721,6 +725,16 @@
     background-color: #13606d;
     box-shadow: 0 4px 12px rgba(26, 122, 138, 0.35);
     transform: translateY(-1px);
+}
+
+.text-teal-link {
+    color: #1a7a8a;
+    transition: color 0.2s ease;
+}
+
+.text-teal-link:hover {
+    color: #13606d;
+    text-decoration: underline;
 }
 
 /* --- Burger: oculto en escritorio --- */
