@@ -1,4 +1,57 @@
+import { useState } from 'react';
+
+const REGIONES = {
+  'Metropolitana': [
+    'Peñalolén',
+    'San Joaquín',
+    'Puente Alto',
+    'Ñuñoa',
+    'La Reina',
+    'La Florida',
+    'Lo Espejo',
+    'Cerrillos',
+    'Cerro Navia',
+    'Conchalí',
+    'El Bosque',
+    'Estación Central',
+    'Huechuraba',
+    'Independencia',
+    'La Cisterna',
+    'San Miguel',
+  ],
+  'Araucanía': [
+    'Temuco',
+    'Padre Las Casas',
+    'Villarrica',
+    'Pucón',
+    'Angol',
+    'Lautaro',
+    'Freire',
+    'Pitrufquén',
+  ],
+  'Ñuble': [
+    'Chillán',
+    'Chillán Viejo',
+    'San Carlos',
+    'Bulnes',
+    'Quirihue',
+    'Coelemu',
+    'Pemuco',
+    'Yungay',
+  ],
+};
 export function Registro() {
+
+  const [region, setRegion]   = useState('');
+  const [comuna, setComuna]   = useState('');
+
+  const comunasDisponibles = region ? REGIONES[region] : [];
+
+  const handleRegion = (e) => {
+    setRegion(e.target.value);
+    setComuna(''); 
+  };
+
   return (
     <div className="registro-page">
       <div className="registro-card">
@@ -68,12 +121,30 @@ export function Registro() {
         </div>
 
         {/* Región y Comuna */}
-        <div className="registro-row">
-          <select className="registro-select">
-            <option>-- Seleccione la región --</option>
+         <div className="registro-row">
+          <select
+            className="registro-select"
+            value={region}
+            onChange={handleRegion}
+          >
+            <option value="">-- Seleccione la región --</option>
+            {Object.keys(REGIONES).map((r) => (
+              <option key={r} value={r}>{r}</option>
+            ))}
           </select>
-          <select className="registro-select">
-            <option>-- Seleccione la comuna --</option>
+
+          <select
+            className="registro-select"
+            value={comuna}
+            onChange={(e) => setComuna(e.target.value)}
+            disabled={!region}
+          >
+            <option value="">
+              {region ? '-- Seleccione la comuna --' : '-- Primero elija región --'}
+            </option>
+            {comunasDisponibles.map((c) => (
+              <option key={c} value={c}>{c}</option>
+            ))}
           </select>
         </div>
 
