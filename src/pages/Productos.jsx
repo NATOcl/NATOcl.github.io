@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 
+
 const servicios = [
   { codigo: 'SV001', nombre: 'Consulta General',   especie: 'Perro / Gato / Aves', duracion: '30 Min', precio: 15000, categoria: 'Consultas' },
   { codigo: 'SV002', nombre: 'Consulta Urgencias', especie: 'Perro / Gato / Aves', duracion: '30 Min', precio: 25000, categoria: 'Consultas' },
@@ -52,7 +53,7 @@ export function Productos() {
   const agregarAlCarrito = (producto) => {
     const carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
     const existente = carrito.find((i) => i.codigo === producto.codigo);
-    if (existente) existente.cantidad += 1;
+    if (existente) existente.cantidad = Math.min(existente.cantidad + 1, 50);
     else carrito.push({ ...producto, cantidad: 1 });
     localStorage.setItem('carrito', JSON.stringify(carrito));
   };
