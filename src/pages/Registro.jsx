@@ -28,11 +28,11 @@ export function Registro() {
         {/* Correo Electrónico */}
         <div className="registro-field">
           <label className="registro-label">
-            CORREO ELECTRÓNICO (@GMAIL.COM)
+            CORREO ELECTRÓNICO (@duoc.cl, @profesor.duoc.cl, @gmail.com)
           </label>
           <input
             type="email"
-            defaultValue="manuel.fe1iz@duoc.cl"
+            placeholder="manuel.fe1iz@duoc.cl"
             className="registro-input"
           />
         </div>
