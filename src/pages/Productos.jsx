@@ -32,6 +32,7 @@ export function Productos() {
   const [tab, setTab]             = useState('servicios');
   const [categoria, setCategoria] = useState('Todos');
   const [busqueda, setBusqueda]   = useState('');
+  const [agregado, setAgregado] = useState(null);
 
   useEffect(() => { setCategoria('Todos'); }, [tab]);
 
@@ -59,6 +60,14 @@ export function Productos() {
   };
 
   const formatPrecio = (n) => `$${n.toLocaleString('es-CL')}`;
+  const handleAgregar = (producto) => {
+    agregarAlCarrito(producto);
+    setAgregado(producto.codigo);
+    setTimeout(
+        () => setAgregado((actual) => (actual === producto.codigo ? null : actual)),
+            1200
+        );
+  };
 
   return (
     <main className="productos-main">
@@ -136,23 +145,27 @@ export function Productos() {
               ) : (
                 filtrados.map((p) => (
                   <tr key={p.codigo}>
-                    <td className="productos-codigo">{p.codigo}</td>
-                    <td><div className="productos-nombre">{p.nombre}</div></td>
-                    <td>{p.especie}</td>
-                    <td>{p.duracion || p.presentacion}</td>
-                    <td className="productos-precio">{formatPrecio(p.precio)}</td>
-                    <td className="text-center">
+                    <td className="productos-codigo productos-c-codigo">{p.codigo}</td>
+                    <td className="productos-c-nombre"><div className="productos-nombre">{p.nombre}</div></td>
+                    <td className="productos-c-especie" data-label="Especie">{p.especie}</td>
+                    <td className="productos-c-extra" data-label={esServicios ? 'Duración' : 'Presentación'}>
+                      {p.duracion || p.presentacion}
+                    </td>
+                    <td className="productos-precio productos-c-precio">{formatPrecio(p.precio)}</td>
+                    <td className="text-center productos-c-pill">
                       <span className="productos-pill">{p.categoria}</span>
                     </td>
-                    <td className="text-center">
+                    <td className="text-center productos-c-accion">
                       <button
-                        type="button"
-                        onClick={() => agregarAlCarrito(p)}
-                        className="productos-btn-agregar"
+                      type="button"
+                      onClick={() => handleAgregar(p)}
+                      className={`productos-btn-agregar ${agregado === p.codigo ? 'is-agregado' : ''}`}
                       >
-                        Agregar
+                        {agregado === p.codigo ? 'Agregado ✓' : 'Agregar'}
+
                       </button>
                     </td>
+
                   </tr>
                 ))
               )}

@@ -78,31 +78,33 @@ export function Carrito(){
                                     <tbody>
                                         {items.map((p) => (
                                             <tr key={p.codigo}>
-                                                <td>
+                                                <td className="carrito-c-nombre">
                                                     <div className="carrito-nombre">{p.nombre}</div>
                                                     <div className="carrito-codigo">
                                                         {p.codigo} · {p.categoria}
                                                     </div>
                                                 </td>
-                                                <td>{formatPrecio(p.precio)}</td>
-                                                <td>
+                                                <td className="carrito-c-precio" data-label="Precio Unitario">
+                                                    {formatPrecio(p.precio)}
+                                                </td>
+                                                <td className="carrito-c-cantidad" data-label="Cantidad">
                                                     <select
                                                         className="carrito-select"
                                                         value={p.cantidad}
                                                         onChange={(e) =>
-                                                            cambiarCantidad(p.codigo,Number(e.target.value))
+                                                            cambiarCantidad(p.codigo, Number(e.target.value))
                                                         }
                                                         aria-label={`Cantidad de ${p.nombre}`}
-                                                    >
-                                                        {CANTIDADES.map((n) => (
-                                                            <option key={n} value={n} > {n}</option>
-                                                        ))}
+                                                        >
+                                                            {CANTIDADES.map((n)=> (
+                                                                <option key={n} value={n}>{n}</option>
+                                                            ))}
                                                     </select>
                                                 </td>
-                                                <td className="carrito-subtotal">
+                                                <td className="carrito-subtotal carrito-c-subtotal" data-label="Subtotal">
                                                     {formatPrecio(p.precio * p.cantidad)}
                                                 </td>
-                                                <td className="text-center">
+                                                <td className="text-center carrito-c-quitar">
                                                     <button
                                                     type="button"
                                                     className="carrito-btn-eliminar"
@@ -112,6 +114,7 @@ export function Carrito(){
                                                         ✕
                                                     </button>
                                                 </td>
+
                                             </tr>
                                         ))}
                                     </tbody>
