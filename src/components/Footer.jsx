@@ -15,7 +15,7 @@ const COLUMNS= [
         title: 'Veterinaria',
         links: [
             {label: 'Nosotros', to: '/nosotros'},
-            {label: 'Blog'},
+            {label: 'Blog', to: '/blogs'},
             {label: 'Contacto', to: '/contacto'}
         ],
 
@@ -24,7 +24,7 @@ const COLUMNS= [
         title: 'Cuenta',
         links: [
             {label: 'Ingresar', to: '/login'},
-            {label: 'Registrar'}
+            {label: 'Registrar', to: '/registro'}
         ]
 
     },
