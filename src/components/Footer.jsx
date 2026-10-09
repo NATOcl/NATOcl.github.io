@@ -5,10 +5,10 @@ const COLUMNS= [
     {
         title: 'Tienda',
         links: [
-            {label: 'Servicios'},
-            {label: 'Medicamentos'},
-            {label: 'Vacunas'},
-            {label: 'Carrito'},
+            {label: 'Servicios', to: 'productos?tab=servicios'},
+            {label: 'Medicamentos', to: 'productos?tab=medicamentos&categoria=Todos'},
+            {label: 'Vacunas', to: '/productos?tab=medicamentos&categoria=Todos#'},
+            {label: 'Carrito', to: '/carrito'},
         ],
     },
     {
