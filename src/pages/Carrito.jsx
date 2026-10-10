@@ -8,6 +8,10 @@ const CANTIDADES = Array.from({length: MAX_CANTIDAD},(_,i) => i + 1);
 
 const formatPrecio = (n) => `$${n.toLocaleString('es-CL')}`;
 
+const eliminar = (codigo) => {
+    setItems((prev) => prev.filter((i) => i.codigo !== codigo));
+};
+
 const generarOrden = () => {
     const hoy = new Date();
     const fecha =
@@ -114,12 +118,12 @@ export function Carrito(){
         setOrden({
             ...generarOrden(),
             cliente: {...form},
-            items: {...form},
+            items: {...items},
             total,
             totalUnidades,
         });
         setItems([]);
-        irA("Exito")
+        irA("exito")
     };
 
     if (paso === "exito" && orden) {
@@ -184,14 +188,14 @@ export function Carrito(){
         );
     }
 
-    if (items.length === 0){
+    if (paso === "datos"){
         return (
             <section className="carrito-main">
                 <div className="carrito-encabezado">
                     <span className="carrito-badge">Veterinaria Petcare</span>
                     <h1 className="carrito-titulo">Finalizar Compra</h1>
                 </div>
-
+                <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
                 <form className="registro-card checkout-card" onSubmit={confirmarCompra} noValidate>
                     <h2 className="registro-card-title">DATOS DEL CLIENTE</h2>
                     <p className="checkout-ayuda">Los campos * son obligatorios.</p>
@@ -330,9 +334,10 @@ export function Carrito(){
                         </button>
                     </div>
                 </form>
+                </div>
             </section>
         );
-    };
+    }
 
     return (
         <section className="carrito-main">
@@ -354,7 +359,7 @@ export function Carrito(){
                                     <th className="text-center">Quitar</th>
                                 </tr>
                             </thead>
-                            <tboy>
+                            <tbody>
                                 {items.map((p) => (
                                     <tr key={p.codigo}>
                                         <td className="carrito-c-nombre">
@@ -395,7 +400,7 @@ export function Carrito(){
                                         </td>
                                     </tr>
                                     ))}
-                                </tboy>
+                                </tbody>
                         </table>
                     </div>
                 </div>
