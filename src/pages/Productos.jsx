@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-
+import { useSearchParams } from 'react-router-dom';
 
 const servicios = [
   { codigo: 'SV001', nombre: 'Consulta General',   especie: 'Perro / Gato / Aves', duracion: '30 Min', precio: 15000, categoria: 'Consultas' },
@@ -34,6 +34,9 @@ export function Productos() {
   const [busqueda, setBusqueda]   = useState('');
   const [agregado, setAgregado] = useState(null);
 
+  const [queryParam] = useSearchParams();
+
+  useEffect(() => { setBusqueda(queryParam.get('q') || ''); }, [queryParam]);
   useEffect(() => { setCategoria('Todos'); }, [tab]);
 
   const esServicios = tab === 'servicios';
