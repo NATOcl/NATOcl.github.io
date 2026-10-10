@@ -14,6 +14,7 @@ import { Carrito} from "./pages/Carrito.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import {UserProfile} from "./pages/UserProfile.jsx";
+import Admin from './pages/admin/Admin.jsx';
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
             {path: 'contacto', element: <Contacto/>},
             {path: 'login', element: <Login/>},
             {path: 'productos', element: <Productos/>},
+            {path: 'admin', element: <Admin />},
             {path: 'users/:userId',element: <UserProfile />},
             {path: 'carrito', element: <Carrito />},
         ],
