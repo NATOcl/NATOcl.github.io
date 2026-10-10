@@ -14,7 +14,7 @@ import { Carrito} from "./pages/Carrito.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import {UserProfile} from "./pages/UserProfile.jsx";
-// import Admin from './pages/admin/Admin.jsx';
+import Admin from './pages/Admin/Admin.jsx';
 
 const router = createBrowserRouter([
     {
@@ -28,11 +28,11 @@ const router = createBrowserRouter([
             {path: 'contacto', element: <Contacto/>},
             {path: 'login', element: <Login/>},
             {path: 'productos', element: <Productos/>},
-            //{path: 'admin', element: <Admin />},
             {path: 'users/:userId',element: <UserProfile />},
             {path: 'carrito', element: <Carrito />},
         ],
     },
+    { path: '/admin', element: <Admin /> }
 ])
 
 createRoot(document.getElementById('root')).render(
