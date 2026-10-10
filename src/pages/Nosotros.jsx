@@ -1,4 +1,4 @@
-import Nosotrosimg from '../assets/nosotros.jpg'
+import nosotrosbombin from '../assets/nosotrosbombin.png'
 import  corazonIcon from '../assets/Corazon.svg'
 import  estrellaIcon from '../assets/Estrella.svg'
 import  escudoIcon from '../assets/Escudo.svg'
@@ -6,6 +6,8 @@ import  escudoIcon from '../assets/Escudo.svg'
 import  hombreImg from '../assets/vetmasculino.jpg'
 import  mujerImg from '../assets/vetfem.jpg'
 import  jovenImg from '../assets/vetjoven.jpg'
+
+import { Link } from 'react-router-dom'
 
 const TEAM = [
     {name: 'Dr. Marcos Von Bischoffshausen', role: 'Director Medico · Medicina Interna', photo: hombreImg},
@@ -16,19 +18,19 @@ const TEAM = [
 const VALUES  = [
     {
         title: 'Compasión',
-        text: 'loremdsad jkdasdkjs dkasjdka  jadska',
+        text: 'Tratamos a cada paciente como si fuera propio, con el cariño y respeto que merece. ',
         color: '#1a7a8a',
         icon: corazonIcon,
     },
     {
         title: 'Excelencia',
-        text: 'loremdsad jkdasdkjs dkasjdka  jadska',
+        text: 'Capacitación continua y tecnología de vanguardia para ofrecer el mejor diagnóstico y tratamiento. ',
         color: '#3b8fc7',
         icon: estrellaIcon,
     },
     {
         title: 'Confiaza',
-        text: 'loremdsad jkdasdkjs dkasjdka  jadska',
+        text: 'Comunicación honesta y transparente en cada paso del proceso de atención de tu mascota. ',
         color: '#0f5c6b',
         icon: escudoIcon,
     },
@@ -46,25 +48,25 @@ export function Nosotros(){
                         </span>
 
                         <h1 className="nosotros-title fw-bold mb-4">
-                            Fundada en 2012 dkjasdas olaaaaaaaaaaaaaaaa soy gay
+                            Medicina veterinaria con corazón 
                         </h1>
 
                         <p className="nosotros-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing eim.
+                            Fundada en 2012 por el Dr. Marcos Salas, PetCare nació con una misión clara: ofrecer atención veterinaria de alta calidad en un ambiente tranquilo y acogedor para las mascotas y sus familias. 
                         </p>
 
                         <p className="nosotros-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing eim.
+                            Contamos con un equipo de 8 veterinarios especializados, tecnología de diagnóstico de última generación y un quirófano completamente equipado. 
                         </p>
 
-                        <a href="#" className="btn btn-teal btn-lg rounded-pill px-4 mt-3">
+                        <Link to="/contacto" className="btn btn-teal btn-lg rounded-pill px-4 mt-3">
                             Agendar consulta
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="col-lg-6">
                         <img
-                            src={Nosotrosimg}
+                            src={nosotrosbombin}
                             alt="Instalaciones PetCare"
                             className="img-fluid w-100 nosotros-img"
                         />

@@ -182,3 +182,46 @@
     border-right-color: var(--border);
   }
 }
+
+:root {
+  --accent: #167a85;
+  --accent-hover: #115d66;
+  --accent-bg: rgba(22, 122, 133, 0.1);
+  --border-color: #e2e8f0;
+}
+
+
+/* login */
+.login-page-wrapper {
+  min-height: calc(100vh - 350px);
+  background-color: #fafafa;
+}
+
+.card-login {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+}
+
+.btn-teal {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 4px 12px rgba(22, 122, 133, 0.3);
+  }
+}
+
+.text-teal-link {
+  color: var(--accent);
+
+  &:hover {
+    color: var(--accent-hover);
+  }
+}
+/* fin de login */
