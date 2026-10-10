@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,500;1,600&family=Nunito:wght@400;600;700&display=swap');
+
+
+:root {
+  --admin-navy: #0f2a3a;
+  --admin-teal: #1a7a8a;
+  --admin-teal-hover: #13606d;
+  --admin-bg: #f2f8fb;
+  --admin-card-bg: #ffffff;
+  --admin-soft-bg: #e8f4f6;
+  --admin-badge-bg: #d4e9f2;
+  --admin-border: #c5dde8;
+  --admin-text-dark: #0f2a3a;
+  --admin-text-muted: #4a5d6b;
+  --admin-text-light: #7f9fae;
+  --font-title: 'Lora', Georgia, serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+}
+
+/* Base global para el panel */
+.admin-wrapper {
+  font-family: var(--font-body);
+  background-color: var(--admin-bg);
+  color: var(--admin-text-muted);
+  min-height: 100vh;
+}
+
+/* sidebar lateral */
+
+.admin-sidebar {
+  width: 250px;
+  min-width: 250px;
+  background-color: var(--admin-card-bg);
+  border-right: 1px solid var(--admin-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.admin-sidebar-brand {
+  height: 60px;
+  background-color: var(--admin-navy);
+  color: #ffffff;
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+}
+
+.admin-nav-item {
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--admin-text-dark);
+  border-radius: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.admin-nav-item:hover {
+  background-color: var(--admin-soft-bg);
+  color: var(--admin-teal);
+}
+
+.admin-nav-item.active {
+  background-color: var(--admin-teal) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(26, 122, 138, 0.25);
+}
+
+.admin-btn-tienda {
+  background-color: var(--admin-navy);
+  color: #ffffff;
+  border-radius: 0.85rem;
+  padding: 0.65rem 1rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.admin-btn-tienda:hover {
+  background-color: #1a4158;
+  color: #ffffff;
+}
+
+.admin-btn-logout {
+  background-color: #c0392b;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.85rem;
+  padding: 0.65rem 1rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.admin-btn-logout:hover {
+  background-color: #a93226;
+}
+
+
+/* contenido y tarjetas */
+
+.admin-title {
+  font-family: var(--font-title);
+  color: var(--admin-text-dark);
+  font-weight: 700;
+}
+
+.admin-metric-card {
+  border: 1px solid var(--admin-border);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(15, 42, 58, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(15, 42, 58, 0.08);
+}
+
+.admin-metric-card.bg-compras {
+  background-color: var(--admin-teal);
+}
+
+.admin-metric-card.bg-productos {
+  background-color: #2e8b57;
+}
+
+.admin-metric-card.bg-usuarios {
+  background-color: #c9821a;
+}
+
+/* Módulos en Grilla */
+.admin-module-card {
+  background-color: var(--admin-card-bg);
+  border: 1px solid var(--admin-border);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  text-align: center;
+  height: 100%;
+  box-shadow: 0 4px 16px rgba(15, 42, 58, 0.04);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.admin-module-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--admin-teal);
+  box-shadow: 0 8px 24px rgba(26, 122, 138, 0.12);
+}
+
+.admin-module-card .module-icon {
+  color: var(--admin-teal);
+}
+
+
+/* tablas y formularios */
+
+.admin-table-container {
+  background-color: var(--admin-card-bg);
+  border: 1px solid var(--admin-border);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 42, 58, 0.04);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table thead {
+  background-color: var(--admin-soft-bg);
+  color: var(--admin-text-dark);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+}
+
+.admin-table tbody tr {
+  border-bottom: 1px solid #eef5f8;
+  transition: background-color 0.15s ease;
+}
+
+.admin-table tbody tr:hover {
+  background-color: #f7fbfc;
+}
+
+.admin-badge-critico {
+  background-color: #c0392b;
+  color: #ffffff;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.admin-badge-ok {
+  background-color: var(--admin-badge-bg);
+  color: var(--admin-teal);
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+
+/* adaptabilidad para moviles */
+
+@media (max-width: 991px) {
+  .admin-layout-container {
+    flex-direction: column !important;
+  }
+
+  .admin-sidebar {
+    width: 100% !important;
+    min-width: 100% !important;
+    border-right: none;
+    border-bottom: 1px solid var(--admin-border);
+  }
+
+  /* Menú de navegación en móviles con desplazamiento horizontal (Scroll) */
+  .admin-sidebar .nav-pills {
+    flex-direction: row !important;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+  }
+
+  .admin-sidebar .nav-pills li {
+    flex: 0 0 auto;
+  }
+
+  .admin-nav-item {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Transformación de tablas en tarjetas para pantallas pequeñas (celulares) */
+@media (max-width: 640px) {
+  .admin-table-container {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .admin-table,
+  .admin-table tbody,
+  .admin-table tr,
+  .admin-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-table thead {
+    display: none;
+  }
+
+  .admin-table tbody tr {
+    background-color: var(--admin-card-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: 1.1rem;
+    padding: 1rem;
+    margin-bottom: 0.85rem;
+    box-shadow: 0 4px 16px rgba(15, 42, 58, 0.04);
+  }
+
+  .admin-table td {
+    padding: 0.4rem 0;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .admin-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: var(--admin-text-light);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+}
