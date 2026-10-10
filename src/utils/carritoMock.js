@@ -13,7 +13,7 @@ export function guardarCarrito(items) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   } catch {
-    // localStorage bloqueado
+    // localStorage bloqueado, no rompemos
   }
 }
 
