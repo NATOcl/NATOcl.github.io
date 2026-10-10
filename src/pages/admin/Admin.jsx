@@ -34,5 +34,46 @@ export default function Admin() {
 ]);
 }
 
+const [verBoleta, SetVerBoleta] = useState(null);
+const [mostrarFromProducto, setMostrarFormProducto] = useState(false);
+const [productoEditar, setProductoEditar] = useState(null);
+const [fromProducto, setFromProducto] = useState({
+    codigo: '',
+    nombre: ''
+    categoria: 'Consultas',
+    precio: 0,
+    stock: 0,
+});          
+const [nuevaCategoria, setNuevaCategoria] = useState('');
+const [filtroStockCritico, setFiltroStockCritico] = useState(false);
 
- 
+/* funciones productos */
+const handleGuardarProducto = (e) => {
+    e.preventDefault();
+    if (productoEditar) {
+        setProductos((productos.map((p) => p.codigo === productoEditar.codigo ? { ...fromProducto } : p))); //* creo que la parte de productoEditar.codigo es para que no se cambie el codigo del producto, pero no estoy seguro */
+    } else {
+        setProductos([...productos, { ...fromProducto }]);
+    }
+    setFromProducto({
+        codigo: '',
+        nombre: '',
+        categoria: 'Consultas',
+        precio: 0,
+        stock: 0,
+    });
+    setMostrarFormProducto(false);
+    setProductoEditar(null);
+};
+
+const handleEditar = (producto) => {
+    setFormProducto({ ...producto });
+    setProductoEditar(producto);
+    setMostrarFormProducto(true);
+}
+
+const handleEliminarProducto = (codigo) => {
+    if (window.confirm('¿Estás seguro de que deseas eliminar este producto?')) {
+        setProductos(productos.filter((p) => p.codigo !== codigo));
+    }
+};
