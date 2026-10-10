@@ -236,7 +236,7 @@ export function Carrito(){
                             type="email"
                             autoComplete="email"
                             placeholder="pedro.hacker@example.com"
-                            className={`registro-input ${errores.email ? "is-invalid" : ""}`}
+                            className={`registro-input ${errores.correo ? "is-invalid" : ""}`}
                             value={form.correo}
                             onChange={handleChange}
                         />
@@ -257,7 +257,7 @@ export function Carrito(){
                                 onChange={handleChange}
                             />
                         </Campo>
-                        <Campo id="depto" label="DEPARTAMENTO (OPCIONAL)" error={errores.depto}>
+                        <Campo id="depto" label="DEPARTAMENTO (OPCIONAL)">
                             <input
                                 id="depto"
                                 name="depto"
@@ -310,6 +310,7 @@ export function Carrito(){
                         <textarea
                             name="indicaciones"
                             id="indicaciones"
+                            className="registro-input"
                             placeholder="Ej: El martes no estaremos, pero puede dejarlo con el conserje."
                             rows={3}
                             value={form.indicaciones}
