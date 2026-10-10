@@ -8,10 +8,6 @@ const CANTIDADES = Array.from({length: MAX_CANTIDAD},(_,i) => i + 1);
 
 const formatPrecio = (n) => `$${n.toLocaleString('es-CL')}`;
 
-const eliminar = (codigo) => {
-    setItems((prev) => prev.filter((i) => i.codigo !== codigo));
-};
-
 const generarOrden = () => {
     const hoy = new Date();
     const fecha =
@@ -49,6 +45,9 @@ function Campo ({id, label,requerido,error,children}) {
 }
 
 function ListaProductos({ items }) {
+    if (!Array.isArray(items) || items.length === 0) {
+        return <p className="boleta-vacio">No hay productos.</p>;
+    }
     return(
         <ul className="bolsa-lista">
             {items.map((p) => (
@@ -74,6 +73,10 @@ export function Carrito(){
     const [form,setForm] = useState(FORM_VACIO);
     const [errores,setErrores] = useState({});
     const [orden,setOrden] = useState(null);
+
+    const eliminar = (codigo) => {
+        setItems((prev) => prev.filter((i) => i.codigo !== codigo));
+    };
 
 
     useEffect(() => {
@@ -118,7 +121,7 @@ export function Carrito(){
         setOrden({
             ...generarOrden(),
             cliente: {...form},
-            items: {...items},
+            items: [...items],
             total,
             totalUnidades,
         });
@@ -138,7 +141,7 @@ export function Carrito(){
                         Se ha realizado la compra exitosamente
                     </h1>
 
-                    <dl className="boleta-datps">
+                    <dl className="boleta-datos">
                         <div>
                             <dt>Nombre</dt>
                             <dd>{c.nombre} {c.apellidos}</dd>
@@ -157,7 +160,7 @@ export function Carrito(){
                         {c.indicaciones && (
                             <div>
                                 <dt>Indicaciones para la entrega</dt>
-                                <dt>{c.indicaciones}</dt>
+                                <dd>{c.indicaciones}</dd>
                             </div>
                         )}
                     </dl>
@@ -221,7 +224,7 @@ export function Carrito(){
                                 autoComplete="family-name"
                                 placeholder="Hacker"
                                 className={`registro-input ${errores.apellidos ? "is-invalid" : ""}`}
-                                value={form.nombre}
+                                value={form.apellidos}
                                 onChange={handleChange}
                             />
                         </Campo>
@@ -254,7 +257,7 @@ export function Carrito(){
                                 onChange={handleChange}
                             />
                         </Campo>
-                        <Campo id="depto" label="DEPARTAMENTO (OPCIONAL)" requerido error={errores.depto}>
+                        <Campo id="depto" label="DEPARTAMENTO (OPCIONAL)" error={errores.depto}>
                             <input
                                 id="depto"
                                 name="depto"
@@ -271,8 +274,8 @@ export function Carrito(){
                     <div className="registro-row">
                         <Campo id="region" label="REGION" requerido error={errores.region}>
                             <select
-                                id="Region"
-                                name="Region"
+                                id="region"
+                                name="region"
                                 placeholder="Depto 39"
                                 className={`registro-select ${errores.region ? "is-invalid" : ""}`}
                                 value={form.region}
@@ -406,7 +409,6 @@ export function Carrito(){
                 </div>
 
                 <aside className="carrito-resumen">
-                    <h2 className="carrito-resumen-titulo">
                         <div className="carrito-resumen-fila">
                             <span>Items Distintos</span>
                             <span>{items.length}</span>
@@ -430,7 +432,6 @@ export function Carrito(){
                         <button type="button" className="carrito-btn-secundario" onClick={vaciar}>
                             Vaciar carrito
                         </button>
-                    </h2>
                 </aside>
             </div>
         </section>
