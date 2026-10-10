@@ -1625,3 +1625,261 @@ html, body {
         height: 2.5rem;
     }
 }
+
+/* ---------- Checkout (reutiliza las clases de Registro) ---------- */
+
+/* Campos en fila: lado a lado desde 576px (la fila ya es columna en celular) */
+.registro-row > .registro-field {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.checkout-card {
+    margin: 0 auto;
+}
+
+.checkout-card .registro-row {
+    margin-bottom: 20px;
+}
+
+.registro-error {
+    color: #c0392b;
+    font-size: 0.8rem;
+    margin: 6px 0 0;
+}
+
+.registro-input.is-invalid,
+.registro-select.is-invalid {
+    border-color: #c0392b;
+}
+
+textarea.registro-input {
+    min-height: 5.5rem;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.registro-select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.checkout-subtitulo {
+    font-family: 'Lora', Georgia, serif;
+    color: #0f2a3a;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 1.5rem 0 1rem;
+}
+
+.checkout-ayuda {
+    color: #7f9fae;
+    font-size: 0.85rem;
+    margin: -0.5rem 0 1.25rem;
+}
+
+.checkout-centro {
+    text-align: center;
+    margin: 1.25rem 0 0;
+}
+
+.checkout-ayuda a {
+    color: #1a7a8a;
+    font-weight: 600;
+}
+
+/* Lista de productos de la boleta */
+.boleta-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.boleta-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eef5f8;
+}
+
+.boleta-item:last-child {
+    border-bottom: none;
+}
+
+.boleta-info {
+    min-width: 0;
+}
+
+.boleta-nombre {
+    color: #0f2a3a;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.boleta-detalle {
+    color: #7f9fae;
+    font-size: 0.85rem;
+}
+
+.boleta-subtotal {
+    color: #0f2a3a;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.boleta-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0 1.5rem;
+    padding: 1rem 1.25rem;
+    background-color: #f2f8fb;
+    border: 1px solid #c5dde8;
+    border-radius: 1rem;
+    color: #0f2a3a;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Encabezado de compra exitosa */
+.boleta-codigo {
+    margin: 0 0 0.75rem;
+    color: #7f9fae;
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+.boleta-titulo {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 1.15rem;
+}
+
+.boleta-check {
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+    background-color: #2e8b57;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.boleta-datos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.9rem 1.5rem;
+    margin: 0;
+}
+
+.boleta-datos dt {
+    color: #7f9fae;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.boleta-datos dd {
+    margin: 0.15rem 0 0;
+    color: #0f2a3a;
+    overflow-wrap: anywhere;
+}
+
+/* Botones de acción */
+.checkout-acciones {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+}
+
+.checkout-acciones-centro {
+    flex-direction: column;
+}
+
+.checkout-btn {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 0.9rem;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+.checkout-btn:hover {
+    filter: brightness(0.92);
+}
+
+.checkout-btn-pdf {
+    background-color: #c0392b;
+}
+
+.checkout-card :focus-visible {
+    outline: 3px solid rgba(26, 122, 138, 0.45);
+    outline-offset: 2px;
+}
+
+@media (min-width: 576px) {
+    .boleta-datos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .boleta-titulo {
+        font-size: 1.4rem;
+    }
+
+    .checkout-acciones {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .checkout-acciones .registro-button {
+        flex: 1;
+        width: auto;
+    }
+
+    .checkout-acciones .carrito-btn-secundario {
+        flex-shrink: 0;
+    }
+
+    .checkout-acciones-centro {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .checkout-btn {
+        width: auto;
+    }
+}
+
+/* Al imprimir la boleta solo se ve la compra */
+@media print {
+    .navbar-header,
+    .footer-dark,
+    .no-print {
+        display: none !important;
+    }
+
+    .carrito-main {
+        padding: 0;
+        background: #ffffff;
+        min-height: 0;
+    }
+
+    .checkout-card {
+        border: none;
+        box-shadow: none;
+    }
+}
