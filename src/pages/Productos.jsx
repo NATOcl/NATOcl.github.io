@@ -1,7 +1,14 @@
 import { useProductos } from '../hooks/useProductos';
 import { formatPrecio } from '../utils/carritoMock';
+import {useEffect} from "react";
+import {useSearchParams} from "react-router-dom";
+
+
 
 export function Productos() {
+  const [searchParams] = useSearchParams();
+  const queryBusqueda = searchParams.get('q');
+
   const {
     tab, setTab,
     categoria, setCategoria,
@@ -11,6 +18,10 @@ export function Productos() {
     cargando, error,
   } = useProductos();
 
+
+  useEffect(() => {
+    if (queryBusqueda !== null) {setBusqueda(queryBusqueda);}
+    }, [queryBusqueda, setBusqueda]);
   return (
     <main className="productos-main">
 

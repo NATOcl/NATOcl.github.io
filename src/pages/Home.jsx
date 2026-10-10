@@ -49,11 +49,11 @@ const TESTIMONIOS = [
     texto: 'Excelente atención de urgencias. Salvaron a Manzanita a altas horas de la noche con una calidez y profesionalismo increíbles. ¡100% recomendados!',
   },
   {
-    nombre: 'Carmen Gonzales',
-    mascota: 'Dueña de Zapato (Gato Mestizo)',
-    iniciales: 'CG',
+    nombre: 'Valentina Pacheco',
+    mascota: 'Dueña de Yuki (Gato Mestizo)',
+    iniciales: 'VP',
     estrellas: '★★★★☆',
-    texto: 'Gran equipo de veterinarios. Trataron muy bien a Zapato en su control, aunque la espera en recepción fue un poco más larga de lo previsto.',
+    texto: 'Gran equipo de veterinarios. Trataron muy bien a Yuki en su control, aunque la espera en recepción fue un poco más larga de lo previsto.',
   },
   {
     nombre: 'Georgina Gavilán',

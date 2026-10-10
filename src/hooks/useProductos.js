@@ -6,6 +6,10 @@ import {
 } from '../utils/productosMock';
 import { agregarProducto } from '../utils/carritoMock';
 
+const normalizarTexto = (texto = '') => {
+  return String(texto).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
 export function useProductos() {
   const [tab, setTab]             = useState('servicios');
   const [categoria, setCategoria] = useState('Todos');
@@ -36,12 +40,13 @@ export function useProductos() {
   const categorias  = esServicios ? CATEGORIAS_SERVICIOS : CATEGORIAS_MEDICAMENTOS;
 
   const filtrados = useMemo(() => {
-    const q = busqueda.trim().toLowerCase();
+    const q = normalizarTexto(busqueda.trim());
+    
     return productos.filter((p) => {
       const okCat = categoria === 'Todos' || p.categoria === categoria;
       const okBus = q === '' ||
-        p.nombre.toLowerCase().includes(q) ||
-        p.codigo.toLowerCase().includes(q);
+        normalizarTexto(p.nombre).includes(q) ||
+        normalizarTexto(p.codigo).includes(q);
       return okCat && okBus;
     });
   }, [productos, categoria, busqueda]);
