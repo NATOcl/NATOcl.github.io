@@ -42,4 +42,40 @@ export function agregarProducto(producto) {
   return carrito;
 }
 
+export function cambiarCantidad(codigo, cantidad) {
+  if (!codigo) return leerCarrito();
+  if (!Number.isInteger(cantidad) || cantidad < 1 || cantidad > CANTIDAD_MAX) {
+    return leerCarrito();
+  }
+
+  const carrito = leerCarrito();
+  const actualizado = carrito.map((i) =>
+    i.codigo === codigo ? { ...i, cantidad } : i
+  );
+  guardarCarrito(actualizado);
+  return actualizado;
+}
+
+export function eliminarProducto(codigo) {
+  if (!codigo) return leerCarrito();
+
+  const carrito = leerCarrito();
+  const filtrado = carrito.filter((i) => i.codigo !== codigo);
+  guardarCarrito(filtrado);
+  return filtrado;
+}
+
+export function vaciarCarrito() {
+  guardarCarrito([]);
+  return [];
+}
+
+export function calcularTotal(items) {
+  return items.reduce((suma, i) => suma + i.precio * i.cantidad, 0);
+}
+
+export function calcularUnidades(items) {
+  return items.reduce((suma, i) => suma + i.cantidad, 0);
+}
+
 export const formatPrecio = (n) => `$${n.toLocaleString('es-CL')}`;
