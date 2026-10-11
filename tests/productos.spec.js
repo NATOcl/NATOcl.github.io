@@ -9,7 +9,10 @@ test.beforeEach(async ({ page }) => {
 test('muestra el título y el subtítulo', async ({ page }) => {
   await page.goto('/productos');
   await expect(page.locator('.productos-titulo')).toContainText('Productos y servicios');
-  await expect(page.locator('.productos-subtitulo')).toContainText('pesos chilenos');
+  
+  await expect(
+    page.locator('.productos-subtitulo', { hasText: 'pesos chilenos' })
+  ).toBeVisible();
 });
 
 test('la pestaña Servicios está activa por defecto', async ({ page }) => {
@@ -31,11 +34,13 @@ test('cambiar a la pestaña Medicamentos', async ({ page }) => {
 
 test('filtra por categoría Vacunación', async ({ page }) => {
   await page.goto('/productos');
+  await expect(page.locator('.productos-tabla tbody tr').first()).toBeVisible();
   await page.locator('.productos-filtro', { hasText: 'Vacunación' }).click();
+  await expect(page.locator('.productos-pill', { hasText: 'Vacunación' }).first()).toBeVisible();
   const filas = page.locator('.productos-tabla tbody tr');
   const count = await filas.count();
   expect(count).toBeGreaterThan(0);
-  
+
   const pills = page.locator('.productos-pill');
   for (let i = 0; i < (await pills.count()); i++) {
     await expect(pills.nth(i)).toContainText('Vacunación');

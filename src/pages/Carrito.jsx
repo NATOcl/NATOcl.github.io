@@ -342,7 +342,22 @@ export function Carrito(){
             </section>
         );
     }
-
+    if (items.length === 0) {           
+        return (
+            <section className="carrito-main">
+                <div className="carrito-encabezado">
+                    <span className="carrito-badge">Veterinaria Petcare</span>
+                    <h1 className="carrito-titulo">Tu carrito</h1>
+                </div>
+                <div className="carrito-vacio">
+                    <p>Tu carrito se encuentra vacío.</p>
+                    <Link to="/productos" className="carrito-btn-primario">
+                        Ver productos y servicios
+                    </Link>
+                </div>
+            </section>
+        );
+    }    
     return (
         <section className="carrito-main">
             <div className="carrito-encabezado">
