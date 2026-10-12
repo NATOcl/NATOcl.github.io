@@ -8,30 +8,7 @@ Sitio web de una veterinaria, desarrollado como aplicación de una sola página 
 
 https://natocl.github.io/
 
-## Funcionalidades
 
-- **Catálogo con pestañas:** "Servicios" y "Medicamentos y Vacunas".
-- **Filtros por categoría** mediante botones.
-- **Buscador** de productos y servicios.
-- **Carrito de compras** para agregar y revisar productos.
-- **Login y registro** de usuarios con validaciones propias en JavaScript.
-- **Perfil de usuario**, gestionado con el hook personalizado `useUserProfile`.
-- **Formulario de contacto** con validaciones (`validacionescontacto.js`).
-- **Blogs.**
-- **Nosotros:** el usuario puede conocer al equipo que conforma la veterinaria.
-
-## Tecnologías
-
-| Tecnología | Uso |
-|---|---|
-| React | Interfaz basada en componentes y hooks |
-| Vite | Entorno de desarrollo y empaquetado |
-| JavaScript (ES6+) | Filtros, buscador, carrito y validaciones |
-| Bootstrap | Estilos mediante clases utilitarias |
-| Jasmine | Pruebas unitarias (carpeta `spec/`) |
-| ESLint | Análisis estático y calidad del código |
-| Playwright | Análisis |
-| GitHub Pages | Publicación del sitio |
 
 ## Estructura del proyecto
 
